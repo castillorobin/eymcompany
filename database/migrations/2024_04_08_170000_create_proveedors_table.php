@@ -11,15 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('personals', function (Blueprint $table) {
+        Schema::create('proveedors', function (Blueprint $table) {
             $table->id();
             $table->string('Nombre')->nullable();
-            $table->string('DUI')->nullable();
-            $table->date('Fehca_ingreso')->nullable();
-            $table->string('Cargo')->nullable();
-            $table->date('Nacimiento')->nullable();
-            $table->string('Contacto')->nullable();
-            $table->string('Parentesco')->nullable();
+            $table->string('NCR')->nullable();
             $table->string('Telefono')->nullable();
             $table->string('Direccion')->nullable();
             $table->timestamps();
@@ -31,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('personals');
+        Schema::dropIfExists('proveedors');
     }
 };
