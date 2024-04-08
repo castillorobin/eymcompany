@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PersonalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +22,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/personal', [App\Http\Controllers\PersonalController::class, 'index'])->name('personal');
+//Route::get('/personal', [App\Http\Controllers\PersonalController::class, 'index'])->name('personal');
+
+//Route::resource('/personal', PersonalController::class);
+
+Route::get('/personal', [App\Http\Controllers\PersonalController::class, 'index'])->name('persona');

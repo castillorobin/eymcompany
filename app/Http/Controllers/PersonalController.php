@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Personal;
+use App\Http\Requests\PersonalRequest;
 
+/**
+ * Class PersonalController
+ * @package App\Http\Controllers
+ */
 class PersonalController extends Controller
 {
     /**
@@ -11,7 +16,10 @@ class PersonalController extends Controller
      */
     public function index()
     {
-        //
+        $personals = Personal::paginate();
+
+        return view('personal.index', compact('personals'))
+            ->with('i', (request()->input('page', 1) - 1) * $personals->perPage());
     }
 
     /**
@@ -19,46 +27,57 @@ class PersonalController extends Controller
      */
     public function create()
     {
-        //
+        $personal = new Personal();
+        return view('personal.create', compact('personal'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(PersonalRequest $request)
     {
-        //
+        Personal::create($request->validated());
+
+        return redirect()->route('personals.index')
+            ->with('success', 'Personal created successfully.');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        $personal = Personal::find($id);
+
+        return view('personal.show', compact('personal'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $personal = Personal::find($id);
+
+        return view('personal.edit', compact('personal'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(PersonalRequest $request, Personal $personal)
     {
-        //
+        $personal->update($request->validated());
+
+        return redirect()->route('personals.index')
+            ->with('success', 'Personal updated successfully');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        Personal::find($id)->delete();
+
+        return redirect()->route('personals.index')
+            ->with('success', 'Personal deleted successfully');
     }
 }

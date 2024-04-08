@@ -317,7 +317,7 @@ return [
         ],
         [
             'text' => 'Personal',
-            'url' => 'admin/pages',
+            'url' => 'personal',
             'icon' => 'far fa-fw fa-file',
             
             'label_color' => 'success',
