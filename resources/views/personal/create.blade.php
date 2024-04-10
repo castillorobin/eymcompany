@@ -1,8 +1,12 @@
-@extends('layouts.app')
 
-@section('template_title')
-    {{ __('Create') }} Personal
-@endsection
+
+@extends('adminlte::page')
+
+@section('title', 'Agregar')
+
+@section('content_header')
+    <h1>Crear Registro</h1>
+@stop
 
 @section('content')
     <section class="content container-fluid">
@@ -11,7 +15,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">{{ __('Create') }} Personal</span>
+                        <span class="card-title">{{ __('Crear') }} Personal</span>
                     </div>
                     <div class="card-body bg-white">
                         <form method="POST" action="{{ route('personals.store') }}"  role="form" enctype="multipart/form-data">

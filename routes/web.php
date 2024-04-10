@@ -24,6 +24,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //Route::get('/personal', [App\Http\Controllers\PersonalController::class, 'index'])->name('personal');
 
-//Route::resource('/personal', PersonalController::class);
+Route::resource('/personals', PersonalController::class);
 
 Route::get('/personal', [App\Http\Controllers\PersonalController::class, 'index'])->name('persona');
+Route::get('/personal/crear', [App\Http\Controllers\PersonalController::class, 'create'])->name('create');
