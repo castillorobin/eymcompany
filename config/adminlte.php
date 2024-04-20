@@ -324,8 +324,8 @@ return [
         ],
         
         [
-            'text' => 'Compras',
-            'url' => 'admin/pages',
+            'text' => 'Clientes',
+            'url' => 'cliente',
             'icon' => 'far fa-fw fa-file',
             
             'label_color' => 'success',

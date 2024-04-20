@@ -3,7 +3,7 @@
 @section('title', 'Proveedor')
 
 @section('content_header')
-    <h1>Listado de Proveedores</h1>
+    <h1>Listado de Clientes</h1>
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.5/css/dataTables.dataTables.css" />
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 @stop
@@ -18,15 +18,15 @@
 
             <div class="card card-default">
                 <div class="card-header">
-                    <span class="card-title">Proveedores</span>
-                    <a href="/proveedor/crear">
-                    <button type="button" class="btn btn-success" style="float: right;">Agregar Proveedor</button>
+                    <span class="card-title">Clientes</span>
+                    <a href="/cliente/crear">
+                    <button type="button" class="btn btn-success" style="float: right;">Agregar Cliente</button>
                 </a>
                 </div>
                 <div class="card-body bg-white">
 
 
-                    <table id="prove" class="table table-bordered shadow-lg mt-4 cell-border">
+                    <table id="clientes" class="table table-bordered shadow-lg mt-4 cell-border">
                         <thead >
                             <tr >
                                 
@@ -39,13 +39,13 @@
                         </thead>
                         <tbody>
                             
-                            @for ($i=0; $i< count($proveedores); $i++)
+                            @for ($i=0; $i< count($clientes); $i++)
                             <tr >
-                            <td>{{ $proveedores[$i]->id }}</td>
+                            <td>{{ $clientes[$i]->id }}</td>
                            
-                            <td>{{ $proveedores[$i]->Nombre }}</td>
-                            <td>{{ $proveedores[$i]->Telefono }}</td>
-                            <td>{{ $proveedores[$i]->Direccion }}</td>
+                            <td>{{ $clientes[$i]->Nombre }}</td>
+                            <td>{{ $clientes[$i]->Telefono }}</td>
+                            <td>{{ $clientes[$i]->Direccion }}</td>
                         
                             <td class="opciones text-center" style="">
                                 <a href="/proveedor/ver">
@@ -85,7 +85,7 @@ $(document).ready( function () {
 } );
 */
 
-new DataTable('#prove', {
+new DataTable('#clientes', {
     
     
 });

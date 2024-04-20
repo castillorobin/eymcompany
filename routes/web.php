@@ -34,3 +34,9 @@ Route::get('/proveedor', [App\Http\Controllers\ProveedorController::class, 'inde
 Route::get('/proveedor/ver', [App\Http\Controllers\ProveedorController::class, 'ver'])->name('verp');
 Route::get('/proveedor/crear', [App\Http\Controllers\ProveedorController::class, 'create'])->name('crearp');
 Route::get('/proveedor/guardar', [App\Http\Controllers\ProveedorController::class, 'store'])->name('guardarp');
+
+//CLientes
+Route::get('/cliente', [App\Http\Controllers\ClienteController::class, 'index'])->name('indexc');
+Route::get('/cliente/ver', [App\Http\Controllers\ClienteController::class, 'ver'])->name('verc');
+Route::get('/cliente/crear', [App\Http\Controllers\ClienteController::class, 'create'])->name('crearc');
+Route::get('/cliente/guardar', [App\Http\Controllers\ClienteController::class, 'store'])->name('guardarc');
