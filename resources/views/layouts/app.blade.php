@@ -15,6 +15,8 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/2.0.5/js/dataTables.js"></script>
 </head>
 <body>
     <div id="app">

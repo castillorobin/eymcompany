@@ -11,7 +11,7 @@ use App\Http\Requests\PersonalRequest;
  */
 class PersonalController extends Controller
 {
-    /**
+    /** 
      * Display a listing of the resource.
      */
     public function index()

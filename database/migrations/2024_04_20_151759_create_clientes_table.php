@@ -11,17 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('proveedors', function (Blueprint $table) {
+        Schema::create('clientes', function (Blueprint $table) {
             $table->id();
             $table->string('Nombre')->nullable();
-            $table->string('NCR')->nullable();
             $table->string('Telefono')->nullable();
-            $table->string('Correo')->nullable();
             $table->string('Direccion')->nullable();
-            $table->string('Articulos')->nullable();
-            $table->string('Sitio_web')->nullable();
-            $table->string('Tipo_credito')->nullable();
-            $table->string('Numero_interno')->nullable();
+            $table->string('Correo')->nullable();
+            $table->string('NCR')->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('proveedors');
+        Schema::dropIfExists('clientes');
     }
 };

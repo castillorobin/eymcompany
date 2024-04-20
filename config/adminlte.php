@@ -333,7 +333,7 @@ return [
 
         [
             'text' => 'Proveedores',
-            'url' => 'admin/pages',
+            'url' => 'proveedor',
             'icon' => 'far fa-fw fa-file',
             
             'label_color' => 'success',
