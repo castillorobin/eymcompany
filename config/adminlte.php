@@ -340,7 +340,7 @@ return [
         ],
         [
             'text' => 'Inventario',
-            'url' => 'admin/pages',
+            'url' => 'producto',
             'icon' => 'far fa-fw fa-file',
             
             'label_color' => 'success',

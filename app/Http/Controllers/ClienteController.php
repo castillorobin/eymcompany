@@ -85,7 +85,7 @@ class ClienteController extends Controller
      */
     public function destroy(string $id)
     {
-        CLiente::find($id)->delete();
+        Cliente::find($id)->delete();
         return redirect()->route('indexc');
     }
 }
