@@ -48,11 +48,17 @@
                             <td>{{ $clientes[$i]->Direccion }}</td>
                         
                             <td class="opciones text-center" style="">
-                                <a href="/proveedor/ver">
+                                <a href="/cliente/ver">
                                 <button type="button" class="btn btn-primary">Ver</button>
                             </a>           
+
+                            <a href="/cliente/editar/{{ $clientes[$i]->id }}">
                                 <button type="button" class="btn btn-warning">Editar</button>
+                            </a>
+
+                                <a href="/cliente/borrar/{{ $clientes[$i]->id }}">
                                 <button type="button" class="btn btn-danger">Borrar</button>
+                            </a>
                         
                             </td>
                             </tr>

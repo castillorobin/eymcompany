@@ -59,7 +59,8 @@ class ProveedorController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $proveedor = Proveedor::all();
+        return view('proveedor.index', compact('proveedores'));
     }
 
     /**
@@ -67,7 +68,8 @@ class ProveedorController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $proveedor = Proveedor::find($id);
+        return view('proveedor.editar', compact('proveedor'));
     }
 
     /**
@@ -75,7 +77,21 @@ class ProveedorController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $proveedor = Proveedor::find($id);
+
+        $proveedor->Nombre = $request->get('nombre');
+        $proveedor->NCR = $request->get('ncr');
+        $proveedor->Telefono = $request->get('telefono');
+        $proveedor->Correo = $request->get('correo');
+        $proveedor->Direccion = $request->get('direccion');
+        $proveedor->Articulos = $request->get('articulo');
+        $proveedor->Sitio_web = $request->get('web');
+        $proveedor->Tipo_credito = $request->get('credito');
+        $proveedor->Numero_interno = $request->get('interno');
         
+        $proveedor->save();
+
+        return redirect()->route('indexp');
     }
 
     /**
@@ -83,6 +99,7 @@ class ProveedorController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Proveedor::find($id)->delete();
+        return redirect()->route('indexp');
     }
 }

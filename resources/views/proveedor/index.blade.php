@@ -51,9 +51,15 @@
                                 <a href="/proveedor/ver">
                                 <button type="button" class="btn btn-primary">Ver</button>
                             </a>           
+
+                            <a href="/proveedor/editar/{{ $proveedores[$i]->id }}">
                                 <button type="button" class="btn btn-warning">Editar</button>
+                            </a>
+
+                                <a href="/proveedor/borrar/{{ $proveedores[$i]->id }}">
                                 <button type="button" class="btn btn-danger">Borrar</button>
-                        
+                                </a>
+ 
                             </td>
                             </tr>
                             @endfor

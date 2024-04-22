@@ -57,7 +57,8 @@ class ClienteController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $cliente = Cliente::find($id);
+        return view('cliente.editar', compact('cliente'));
     }
 
     /**
@@ -65,7 +66,18 @@ class ClienteController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $cliente = Cliente::find($id);
+
+        $cliente->Nombre = $request->get('nombre');
+        $cliente->NCR = $request->get('ncr');
+        $cliente->Telefono = $request->get('telefono');
+        $cliente->Correo = $request->get('correo');
+        $cliente->Direccion = $request->get('direccion');
+        
+        
+        $cliente->save();
+
+        return redirect()->route('indexc');
     }
 
     /**
@@ -73,6 +85,7 @@ class ClienteController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        CLiente::find($id)->delete();
+        return redirect()->route('indexc');
     }
 }
