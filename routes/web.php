@@ -56,3 +56,8 @@ Route::get('/producto/guardar', [App\Http\Controllers\ProductoController::class,
 Route::get('/producto/borrar/{id}', [App\Http\Controllers\ProductoController::class, 'destroy'])->name('borrarpr');
 Route::get('/producto/editar/{id}', [App\Http\Controllers\ProductoController::class, 'edit'])->name('editarpr');
 Route::get('/producto/update/{id}', [App\Http\Controllers\ProductoController::class, 'update'])->name('updatepr');
+
+
+// Cotizaciones
+Route::get('/cotizacion', [App\Http\Controllers\CotizacioncController::class, 'index'])->name('indexco');
+Route::get('/cotizacion/crear', [App\Http\Controllers\CotizacioncController::class, 'create'])->name('crearco');

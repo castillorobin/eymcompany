@@ -346,6 +346,14 @@ return [
             'label_color' => 'success',
         ],
 
+        [
+            'text' => 'Cotización',
+            'url' => 'cotizacion',
+            'icon' => 'far fa-fw fa-file',
+            
+            'label_color' => 'success',
+        ],
+
         ['header' => 'Configuraciones'],
         [
             'text' => 'Perfil',
