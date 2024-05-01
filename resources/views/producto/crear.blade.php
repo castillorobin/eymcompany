@@ -73,7 +73,7 @@
 
                     <div class="mb-3 col-4">
                         <label class="form-label">Periodo de revisión</label>
-                        <input type="text" class="form-control" id="revision" name="revision" placeholder="revision">
+                        <input type="date" class="form-control" id="revision" name="revision" placeholder="revision">
                     </div>
                    
 

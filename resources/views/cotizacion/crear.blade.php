@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Proveedor')
+@section('title', 'Cotización')
 
 @section('content_header')
-    <h1>Agregar de Proveedor</h1>
+    <h1>Agregar Cotización</h1>
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.5/css/dataTables.dataTables.css" />
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 @stop
@@ -28,54 +28,103 @@
 <form action="/proveedor/guardar" method="get">
 @csrf
         @method('GET')
+        <div class="row">
 
-                    <div class="mb-3 col-8">
-                        <label class="form-label">Nombre</label>
+                    <div class="mb-3 col-6">
+                        <label class="form-label">Atención</label>
                         <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese el nombre">
                     </div>
 
 
-                    <div class="mb-3 col-4">
-                        <label class="form-label">Teléfono</label>
-                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ingrese el # telefono">
+                    <div class="mb-3 col-3">
+                        <label class="form-label">Cotización</label>
+                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ingrese el #">
                     </div>
 
-                    <div class="mb-3 col-4">
-                        <label class="form-label">NCR</label>
-                        <input type="text" class="form-control" id="ncr" name="ncr" placeholder="Ingrese el NCR">
+                    <div class="mb-3 col-3">
+                        <label class="form-label">Fecha</label>
+                        <input type="date" class="form-control" id="telefono" name="telefono" placeholder="Ingrese el # telefono">
                     </div>
+        </div>
 
-                    <div class="mb-3 col-4">
-                        <label class="form-label">Correo</label>
-                        <input type="email" class="form-control" id="correo" name="correo" placeholder="nombre@dominio.com">
-                    </div>
+        <div class="row">
 
-                    <div class="mb-3 col-8">
-                        <label class="form-label">Dirección</label>
-                        <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Ingrese la dirección">
-                    </div>
-
-                    <div class="mb-3 col-8">
-                        <label class="form-label">Artículo o servicio que provee</label>
-                        <input type="text" class="form-control" id="articulo" name="articulo" placeholder="Ingrese el articulo">
-                    </div>
-
-                    <div class="mb-3 col-4">
-                        <label class="form-label">Sitio web</label>
-                        <input type="text" class="form-control" id="web" name="web" placeholder="www.dominio.com">
-                    </div>
-
-                    <div class="mb-3 col-4">
-                        <label class="form-label">Tipo de crédito</label>
-                        <input type="text" class="form-control" id="credito" name="credito" placeholder="Ingrese el tipo">
-                    </div>
-
-                    <div class="mb-3 col-4">
-                        <label class="form-label">Número interno</label>
-                        <input type="text" class="form-control" id="interno" name="interno" placeholder="Ingrese el número">
+                    <div class="mb-3 col-6">
+                        <label class="form-label">Empresa</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Empresa">
                     </div>
 
 
+                    <div class="mb-3 col-3">
+                        <label class="form-label">Registro</label>
+                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ingrese el #">
+                    </div>      
+        </div>
+
+        <div class="row">
+
+                    <div class="mb-3 col-6">
+                        <label class="form-label">Ubicación</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="">
+                    </div>
+
+
+                    <div class="mb-3 col-3">
+                        <label class="form-label">Contacto 1</label>
+                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ingrese el contacto">
+                    </div>      
+        </div>
+
+        <div class="row">
+
+                    <div class="mb-3 col-6">
+                        <label class="form-label">Orden</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="">
+                    </div>
+
+
+                    <div class="mb-3 col-3">
+                        <label class="form-label">Contacto 2</label>
+                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ingrese el contacto">
+                    </div>      
+        </div>
+
+        <div class="row">
+
+                    <div class="mb-3 col-6">
+                        <label class="form-label">Garantia</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="">
+                    </div>
+
+
+                    <div class="mb-3 col-3">
+                        <label class="form-label">Registro</label>
+                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ingrese el #">
+                    </div>     
+                    <div class="mb-3 col-3">
+                        <label class="form-label">Email</label>
+                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ingrese el Email">
+                    </div>   
+        </div>
+
+        <div class="row">
+                    <div class="mb-3 col-6">
+                        <label class="form-label">Productos</label>
+                        <select class="form-control" name="productos" id="productos">
+                            @foreach($productos as $producto)
+                            <option value="{{$producto->Nombre}}">{{$producto->Nombre}}</option>
+                            @endforeach
+                            
+                        </select>
+                    </div>
+
+                    <div class=" col-3 " >
+                    
+                    <button type="button" class="btn btn-success mt-4" >Success</button>
+                    
+                    </div>   
+        </div>
+                    
 <hr>
 <a href="/proveedor">
                     <button type="button" class="btn btn-danger">Cancelar</button> </a>

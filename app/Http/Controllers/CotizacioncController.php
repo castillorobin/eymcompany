@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Cotizacionc;
 use App\Models\Cliente;
+use App\Models\Producto;
 
 class CotizacioncController extends Controller
 {
@@ -23,7 +24,8 @@ class CotizacioncController extends Controller
     public function create()
     {
         $clientes = Cliente::all();
-        return view('cotizacion.crear', compact('clientes'));
+        $productos = Producto::all();
+        return view('cotizacion.crear', compact('clientes', 'productos'));
     }
 
     /**

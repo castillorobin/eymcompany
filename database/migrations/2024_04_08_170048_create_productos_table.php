@@ -18,9 +18,9 @@ return new class extends Migration
             $table->string('Categoria')->nullable();
             $table->string('Proveedor')->nullable();
             $table->string('Precio')->nullable();
-            $table->int('Cantidad')->nullable();
+            $table->integer('Cantidad')->nullable();
             $table->string('Unidad_medida')->nullable();
-            $table->string('Revision')->nullable();
+            $table->date('Revision')->nullable();
             $table->timestamps();
         });
     }
