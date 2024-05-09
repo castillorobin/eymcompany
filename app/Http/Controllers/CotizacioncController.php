@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Cotizacionc;
 use App\Models\Cliente;
 use App\Models\Producto;
+use App\Models\Cotidetalle;
 
 class CotizacioncController extends Controller
 {
@@ -29,8 +30,17 @@ class CotizacioncController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created resource in storage. 
      */
+
+     public function detalleadd(Request $request)
+     {
+        $detalle = new Cotidetalle();
+        
+        $guia = $request->get('guia') ;
+         
+     }
+ 
     public function store(Request $request)
     {
         //

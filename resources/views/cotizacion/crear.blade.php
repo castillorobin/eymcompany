@@ -108,22 +108,58 @@
         </div>
 
         <div class="row">
+            <form action="/cotizacion/detalleadd" class="row g-2" method="get">
                     <div class="mb-3 col-6">
                         <label class="form-label">Productos</label>
-                        <select class="form-control" name="productos" id="productos">
+                        <select class="form-control" name="producto" id="producto">
                             @foreach($productos as $producto)
                             <option value="{{$producto->Nombre}}">{{$producto->Nombre}}</option>
                             @endforeach
                             
                         </select>
                     </div>
-
+                    <div class=" col-2 " >
+            
+                        <label class="form-label">Cantidad </label>
+                                <input type="text" class="form-control" id="cantidad" name="cantidad" placeholder="Ingrese cantidad">
+                        
+                        </div>  
                     <div class=" col-3 " >
                     
-                    <button type="button" class="btn btn-success mt-4" >Success</button>
+                    <button type="submit" class="btn btn-success mt-4" >Agregar</button>
                     
                     </div>   
+                </form>
         </div>
+        <div class="row">
+            <div class="mb-3 col-2">
+                <label class="form-label">Detalle </label>
+                        <input type="text" class="form-control" id="producto" name="producto" placeholder="Ingrese descripción">
+            </div>
+            <div class=" col-2 " >
+            
+                <label class="form-label">Cantidad </label>
+                        <input type="text" class="form-control" id="cantidad" name="cantidad" placeholder="Ingrese cantidad">
+                
+            </div>  
+            <div class=" col-2 " >
+            
+                <label class="form-label">Precio Unit. </label>
+                        <input type="text" class="form-control" id="cantidad" name="cantidad" placeholder="Ingrese cantidad">
+                
+            </div> 
+            <div class=" col-2 " >
+            
+                <label class="form-label">Precio Total</label>
+                        <input type="text" class="form-control" id="cantidad" name="cantidad" placeholder="Ingrese cantidad">
+                
+            </div> 
+            <div class=" col-3 " >
+            
+            <button type="button" class="btn btn-success mt-4" >Agregar</button>
+            
+            </div>   
+</div>
                     
 <hr>
 <a href="/proveedor">

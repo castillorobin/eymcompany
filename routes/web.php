@@ -61,3 +61,4 @@ Route::get('/producto/update/{id}', [App\Http\Controllers\ProductoController::cl
 // Cotizaciones
 Route::get('/cotizacion', [App\Http\Controllers\CotizacioncController::class, 'index'])->name('indexco');
 Route::get('/cotizacion/crear', [App\Http\Controllers\CotizacioncController::class, 'create'])->name('crearco');
+Route::get('/cotizacion/detalleadd', [App\Http\Controllers\CotizacioncController::class, 'detalleadd'])->name('detalleadd');
