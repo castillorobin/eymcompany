@@ -4,12 +4,15 @@
 
 @section('content_header')
     <h1>Agregar Cotización</h1>
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.5/css/dataTables.dataTables.css" />
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  
+
 @stop
 
 @section('content')
+<link rel="stylesheet" href="https://cdn.datatables.net/2.0.5/css/dataTables.dataTables.css" />
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
 
 <section class="content container-fluid">
@@ -106,27 +109,31 @@
                         <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ingrese el Email">
                     </div>   
         </div>
+        @foreach($productos as $producto)
+        
+        <input type="text" hidden id="det{{ $producto->id }}" value="{{ $producto->Descripcion }}"> 
+        <input type="text" hidden id="can{{ $producto->id }}" value="{{ $producto->Cantidad }}"> 
+        <input type="text" hidden id="pre{{ $producto->id }}" value="{{ $producto->Precio }}"> 
+        
+        @endforeach
 
         <div class="row">
             <form action="/cotizacion/detalleadd" class="row g-2" method="get">
                     <div class="mb-3 col-6">
                         <label class="form-label">Productos</label>
-                        <select class="form-control" name="producto" id="producto">
+                        <select class="form-control js-example-basic-single produ" name="producto" id="producto" onChange="getComboA(this)">
                             @foreach($productos as $producto)
-                            <option value="{{$producto->Nombre}}">{{$producto->Nombre}}</option>
+                            <option value="{{$producto->id}}">{{$producto->Nombre}}</option>
+                            
+                            
                             @endforeach
                             
                         </select>
                     </div>
-                    <div class=" col-2 " >
-            
-                        <label class="form-label">Cantidad </label>
-                                <input type="text" class="form-control" id="cantidad" name="cantidad" placeholder="Ingrese cantidad">
-                        
-                        </div>  
+                  
                     <div class=" col-3 " >
                     
-                    <button type="submit" class="btn btn-success mt-4" >Agregar</button>
+                    <button type="submit" class="btn btn-success mt-4" >Agregar Manual</button>
                     
                     </div>   
                 </form>
@@ -134,24 +141,24 @@
         <div class="row">
             <div class="mb-3 col-2">
                 <label class="form-label">Detalle </label>
-                        <input type="text" class="form-control" id="producto" name="producto" placeholder="Ingrese descripción">
+                        <input type="text" class="form-control" id="detalle" name="detalle" placeholder="Ingrese descripción">
             </div>
             <div class=" col-2 " >
             
                 <label class="form-label">Cantidad </label>
-                        <input type="text" class="form-control" id="cantidad" name="cantidad" placeholder="Ingrese cantidad">
+                        <input type="text" class="form-control" id="cantidad" name="cantidad" placeholder="Ingrese cantidad" onChange="totalizar()">
                 
             </div>  
             <div class=" col-2 " >
             
                 <label class="form-label">Precio Unit. </label>
-                        <input type="text" class="form-control" id="cantidad" name="cantidad" placeholder="Ingrese cantidad">
+                        <input type="text" class="form-control" id="precio" name="precio" placeholder="Ingrese Precio" onChange="totalizar()">
                 
             </div> 
             <div class=" col-2 " >
             
                 <label class="form-label">Precio Total</label>
-                        <input type="text" class="form-control" id="cantidad" name="cantidad" placeholder="Ingrese cantidad">
+                        <input type="text" class="form-control" id="total" name="total">
                 
             </div> 
             <div class=" col-3 " >
@@ -178,9 +185,49 @@
 
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
   
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+    $('.js-example-basic-single').select2();
+});
+</script>
 
 
 
+
+
+<script>
+    function getComboA(selectObject) {
+var id = selectObject.value;  
+//var cant = document.getElementById('can1').text; 
+var canti = document.getElementById('can' + id).value ;
+
+document.getElementById("cantidad").value = canti;
+
+var deta = document.getElementById('det' + id).value ;
+
+document.getElementById("detalle").value = deta;
+
+var preci = document.getElementById('pre' + id).value ;
+
+document.getElementById("precio").value = preci;
+
+document.getElementById("total").value = preci * canti ;
+
+
+}
+
+function totalizar() {
+
+    var canti = document.getElementById("cantidad").value ;
+    var preci = document.getElementById('precio').value ;
+
+    document.getElementById("total").value = preci * canti ;
+
+}
+
+</script>
 @endsection
 
 
