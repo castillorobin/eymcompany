@@ -183,6 +183,44 @@
         </form>
             </div>   
 </div>
+
+<table id="prove" class="table table-bordered shadow-lg mt-4 cell-border">
+    <thead >
+        <tr >
+            
+            <th scope="col">Detalle</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Total</th>
+            <th scope="col">Recargado</th>
+            <th scope="col">Precio Uni Recargado</th>
+            <th scope="col">Accion</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        @for ($i=0; $i< count($detalles); $i++)
+        <tr >
+        <td>{{ $detalles[$i]->descripcion }}</td>
+       
+        <td>{{ $detalles[$i]->cantidad }}</td>
+        <td>${{ $detalles[$i]->preciouni }}</td>
+        <td>${{ $detalles[$i]->total }}</td>
+        <td>${{ $detalles[$i]->recargado }}</td>
+        <td>${{ $detalles[$i]->preciorecargo }}</td>
+    
+        <td class="opciones text-center" style="">
+           
+            <a href="{{ $detalles[$i]->id }}">
+            <button type="button" class="btn btn-danger">Borrar</button>
+            </a>
+
+        </td>
+        </tr>
+        @endfor
+    </tbody>
+
+    </table>
                     
 <hr>
 <a href="/cotizacion">

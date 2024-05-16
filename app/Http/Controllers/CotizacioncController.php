@@ -35,9 +35,22 @@ class CotizacioncController extends Controller
 
      public function detalleadd(Request $request)
      {
+        //$detalles = new Cotidetalle();
         $detalle = new Cotidetalle();
         
-        $guia = $request->get('guia') ;
+        $detalle->descripcion = $request->get('detalle');
+        $detalle->cantidad = $request->get('cantidad');
+        $detalle->preciouni = $request->get('precio');
+        $detalle->total = $request->get('total');
+        $detalle->recargado = $request->get('recarga');
+        $detalle->preciorecargo = $request->get('unirecarga');
+        $detalle->save();
+
+
+       $detalles = Cotidetalle::all();
+       $clientes = Cliente::all();
+        $productos = Producto::all();
+       return view('cotizacion.agregardetalle', compact('clientes', 'productos', 'detalles'));
          
      }
  
