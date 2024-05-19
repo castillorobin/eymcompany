@@ -133,7 +133,7 @@
                   
                     <div class=" col-3 " >
                     
-                    <button type="button" class="btn btn-success mt-4" >Agregar Manual</button>
+                    
                     
                     </div>   
                 </form>
