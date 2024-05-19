@@ -24,6 +24,10 @@ class CotizacioncController extends Controller
      */
     public function create()
     {
+        $marca=Cotidetalle::all();
+     foreach($marca as $mar){
+        $mar->delete();
+     }
         $clientes = Cliente::all();
         $productos = Producto::all();
         return view('cotizacion.crear', compact('clientes', 'productos'));
@@ -53,6 +57,15 @@ class CotizacioncController extends Controller
        return view('cotizacion.agregardetalle', compact('clientes', 'productos', 'detalles'));
          
      }
+
+     public function borrardet($id)
+    {
+        Cotidetalle::find($id)->delete();
+        $detalles = Cotidetalle::all();
+       $clientes = Cliente::all();
+        $productos = Producto::all();
+       return view('cotizacion.agregardetalle', compact('clientes', 'productos', 'detalles'));
+    }
  
     public function store(Request $request)
     {

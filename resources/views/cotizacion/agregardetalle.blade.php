@@ -133,7 +133,7 @@
                   
                     <div class=" col-3 " >
                     
-                    <button type="submit" class="btn btn-success mt-4" >Agregar Manual</button>
+                    <button type="button" class="btn btn-success mt-4" >Agregar Manual</button>
                     
                     </div>   
                 </form>
@@ -211,7 +211,7 @@
     
         <td class="opciones text-center" style="">
            
-            <a href="{{ $detalles[$i]->id }}">
+            <a href="/cotizacion/borrardet/{{ $detalles[$i]->id }}">
             <button type="button" class="btn btn-danger">Borrar</button>
             </a>
 
