@@ -33,6 +33,37 @@ class CotizacioncController extends Controller
         return view('cotizacion.crear', compact('clientes', 'productos'));
     }
 
+    public function detalleconcabe(Request $request)
+    {
+        $codigo = $request->get('codigo');
+        $cotienca = new Cotizacionc();
+        $cotienca->nombre = $request->get('nombre');
+        $cotienca->codigo = $request->get('codigo');
+        $cotienca->fecha = $request->get('fecha');
+        $cotienca->empresa = $request->get('empresa');
+        $cotienca->NCR = $request->get('registro');
+        $cotienca->direccion = $request->get('direccion');
+        $cotienca->contacto1 = $request->get('contacto1');
+        $cotienca->orden = $request->get('orden');
+        $cotienca->contacto2 = $request->get('contacto2');
+        $cotienca->garantia = $request->get('garantia');
+        //$cotienca-> = $request->get('');
+        $cotienca->correo = $request->get('correo');
+
+        $cotienca->save();
+        $cotiactual = Cotizacionc::where('codigo', $codigo)->get();
+
+
+        $detalles=Cotidetalle::all();
+        $clientes = Cliente::all();
+        $productos = Producto::all();
+        return view('cotizacion.agregardetalle', compact('clientes', 'productos', 'detalles', 'cotiactual'));
+    }
+
+
+
+    
+
     /**
      * Store a newly created resource in storage. 
      */
@@ -49,12 +80,13 @@ class CotizacioncController extends Controller
         $detalle->recargado = $request->get('recarga');
         $detalle->preciorecargo = $request->get('unirecarga');
         $detalle->save();
-
-
+        
+        $codigo = $request->get('codigo');
+        $cotiactual = Cotizacionc::where('codigo', $codigo)->get();
        $detalles = Cotidetalle::all();
        $clientes = Cliente::all();
         $productos = Producto::all();
-       return view('cotizacion.agregardetalle', compact('clientes', 'productos', 'detalles'));
+       return view('cotizacion.agregardetalle', compact('clientes', 'productos', 'detalles', 'cotiactual'));
          
      }
 

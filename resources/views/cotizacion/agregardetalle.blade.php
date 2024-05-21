@@ -28,25 +28,25 @@
 
                     
                     
-<form action="/proveedor/guardar" method="get">
-@csrf
-        @method('GET')
+                    <form action="/cotizacion/detalleadd" method="get">
+                        @csrf
+                                @method('GET')
         <div class="row">
 
                     <div class="mb-3 col-6">
                         <label class="form-label">Atención</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese el nombre">
+                        <input type="text" class="form-control" id="nombre" name="nombre" value="{{ $cotiactual[0]->nombre }}">
                     </div>
 
 
                     <div class="mb-3 col-3">
                         <label class="form-label">Cotización</label>
-                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ingrese el #">
+                        <input type="text" class="form-control" id="codigo" name="codigo" value="{{ $cotiactual[0]->codigo }}" >
                     </div>
 
                     <div class="mb-3 col-3">
                         <label class="form-label">Fecha</label>
-                        <input type="date" class="form-control" id="telefono" name="telefono" placeholder="Ingrese el # telefono">
+                        <input type="text" class="form-control" id="telefono" name="telefono" value="{{ $cotiactual[0]->fecha }}">
                     </div>
         </div>
 
@@ -54,13 +54,13 @@
 
                     <div class="mb-3 col-6">
                         <label class="form-label">Empresa</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Empresa">
+                        <input type="text" class="form-control" id="nombre" name="nombre" value="{{ $cotiactual[0]->empresa }}">
                     </div>
 
 
                     <div class="mb-3 col-3">
                         <label class="form-label">Registro</label>
-                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ingrese el #">
+                        <input type="text" class="form-control" id="telefono" name="telefono" value="{{ $cotiactual[0]->NCR }}">
                     </div>      
         </div>
 
@@ -68,13 +68,13 @@
 
                     <div class="mb-3 col-6">
                         <label class="form-label">Ubicación</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="">
+                        <input type="text" class="form-control" id="nombre" name="nombre"value="{{ $cotiactual[0]->direccion }}">
                     </div>
 
 
                     <div class="mb-3 col-3">
                         <label class="form-label">Contacto 1</label>
-                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ingrese el contacto">
+                        <input type="text" class="form-control" id="telefono" name="telefono" value="{{ $cotiactual[0]->contacto1 }}">
                     </div>      
         </div>
 
@@ -82,13 +82,13 @@
 
                     <div class="mb-3 col-6">
                         <label class="form-label">Orden</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="">
+                        <input type="text" class="form-control" id="nombre" name="nombre" value="{{ $cotiactual[0]->orden }}">
                     </div>
 
 
                     <div class="mb-3 col-3">
                         <label class="form-label">Contacto 2</label>
-                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ingrese el contacto">
+                        <input type="text" class="form-control" id="telefono" name="telefono" value="{{ $cotiactual[0]->contacto2 }}">
                     </div>      
         </div>
 
@@ -96,17 +96,17 @@
 
                     <div class="mb-3 col-6">
                         <label class="form-label">Garantia</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="">
+                        <input type="text" class="form-control" id="nombre" name="nombre" value="{{ $cotiactual[0]->garantia }}">
                     </div>
 
 
                     <div class="mb-3 col-3">
                         <label class="form-label">Registro</label>
-                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ingrese el #">
+                        <input type="text" class="form-control" id="telefono" name="telefono" >
                     </div>     
                     <div class="mb-3 col-3">
                         <label class="form-label">Email</label>
-                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ingrese el Email">
+                        <input type="text" class="form-control" id="telefono" name="telefono" value="{{ $cotiactual[0]->correo }}">
                     </div>   
         </div>
         @foreach($productos as $producto)
@@ -136,11 +136,9 @@
                     
                     
                     </div>   
-                </form>
+             
         </div>
-        <form action="/cotizacion/detalleadd" method="get">
-            @csrf
-                    @method('GET')
+       
         <div class="row">
             <div class="mb-3 col-2">
                 <label class="form-label">Detalle </label>

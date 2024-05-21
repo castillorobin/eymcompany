@@ -28,9 +28,11 @@
 
                     
                     
-<form action="/proveedor/guardar" method="get">
-@csrf
-        @method('GET')
+                    <form action="/cotizacion/detalleconcabe" method="get">
+                        @csrf
+                                @method('GET')
+
+
         <div class="row">
 
                     <div class="mb-3 col-6">
@@ -41,12 +43,12 @@
 
                     <div class="mb-3 col-3">
                         <label class="form-label">Cotización</label>
-                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ingrese el #">
+                        <input type="text" class="form-control" id="codigo" name="codigo" placeholder="Ingrese el #">
                     </div>
 
                     <div class="mb-3 col-3">
                         <label class="form-label">Fecha</label>
-                        <input type="date" class="form-control" id="telefono" name="telefono" placeholder="Ingrese el # telefono">
+                        <input type="date" class="form-control" id="fecha" name="fecha" placeholder="Ingrese el # telefono">
                     </div>
         </div>
 
@@ -54,13 +56,13 @@
 
                     <div class="mb-3 col-6">
                         <label class="form-label">Empresa</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Empresa">
+                        <input type="text" class="form-control" id="empresa" name="empresa" placeholder="Empresa">
                     </div>
 
 
                     <div class="mb-3 col-3">
                         <label class="form-label">Registro</label>
-                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ingrese el #">
+                        <input type="text" class="form-control" id="registro" name="registro" placeholder="Ingrese el #">
                     </div>      
         </div>
 
@@ -68,13 +70,13 @@
 
                     <div class="mb-3 col-6">
                         <label class="form-label">Ubicación</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="">
+                        <input type="text" class="form-control" id="direccion" name="direccion" placeholder="">
                     </div>
 
 
                     <div class="mb-3 col-3">
                         <label class="form-label">Contacto 1</label>
-                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ingrese el contacto">
+                        <input type="text" class="form-control" id="contacto1" name="contacto1" placeholder="Ingrese el contacto">
                     </div>      
         </div>
 
@@ -82,13 +84,13 @@
 
                     <div class="mb-3 col-6">
                         <label class="form-label">Orden</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="">
+                        <input type="text" class="form-control" id="orden" name="orden" placeholder="">
                     </div>
 
 
                     <div class="mb-3 col-3">
                         <label class="form-label">Contacto 2</label>
-                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ingrese el contacto">
+                        <input type="text" class="form-control" id="contacto2" name="contacto2" placeholder="Ingrese el contacto">
                     </div>      
         </div>
 
@@ -96,17 +98,17 @@
 
                     <div class="mb-3 col-6">
                         <label class="form-label">Garantia</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="">
+                        <input type="text" class="form-control" id="garantia" name="garantia" placeholder="">
                     </div>
 
 
                     <div class="mb-3 col-3">
                         <label class="form-label">Registro</label>
-                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ingrese el #">
+                        <input type="text" class="form-control" id="registro2" name="registro2" placeholder="Ingrese el #">
                     </div>     
                     <div class="mb-3 col-3">
                         <label class="form-label">Email</label>
-                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ingrese el Email">
+                        <input type="text" class="form-control" id="correo" name="correo" placeholder="Ingrese el Email">
                     </div>   
         </div>
         @foreach($productos as $producto)
@@ -118,7 +120,7 @@
         @endforeach
 
         <div class="row">
-            <form action="" class="row g-2" method="get">
+            
                     <div class="mb-3 col-6">
                         <label class="form-label">Productos</label>
                         <select class="form-control js-example-basic-single produ" name="producto" id="producto" onChange="getComboA(this)">
@@ -136,11 +138,9 @@
                     
                     
                     </div>   
-                </form>
+                
         </div>
-        <form action="/cotizacion/detalleadd" method="get">
-            @csrf
-                    @method('GET')
+        
         <div class="row">
             <div class="mb-3 col-2">
                 <label class="form-label">Detalle </label>
