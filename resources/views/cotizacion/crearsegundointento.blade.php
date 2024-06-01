@@ -31,137 +31,86 @@
                     <form action="/cotizacion/detalleconcabe" method="get">
                         @csrf
                                 @method('GET')
-<div class="container">
 
-        <div class="row my-2">
 
-                    <div class="col-6">
-                        
-                        <div class="input-group">
-                        <span class="input-group-text">Atencion</span>
-                        <input type="text" class="form-control" id="nombre" name="nombre">
- 
-                        </div>
+        <div class="row">
+
+                    <div class="mb-3 col-6">
+                        <label class="form-label">Atención</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese el nombre">
                     </div>
 
 
-                    <div class="col-3">
-                    <div class="input-group">
-                        <span class="input-group-text" >Cotización</span>
-                        <input type="text" class="form-control" id="codigo" name="codigo">
-
-                    </div>
+                    <div class="mb-3 col-3">
+                        <label class="form-label">Cotización</label>
+                        <input type="text" class="form-control" id="codigo" name="codigo" placeholder="Ingrese el #">
                     </div>
 
-                    <div class="col-3">
-                    <div class="input-group">
-                        <span class="input-group-text">Fecha</span>
-                        <input type="date" class="form-control" id="fecha" name="fecha" >
-                    </div>
+                    <div class="mb-3 col-3">
+                        <label class="form-label">Fecha</label>
+                        <input type="date" class="form-control" id="fecha" name="fecha" placeholder="Ingrese el # telefono">
                     </div>
         </div>
 
-        <div class="row my-2">
+        <div class="row">
 
-                    <div class=" col-6">
-                    <div class="input-group">
-                        <span class="input-group-text">Empresa</span>
-                        <input type="text" class="form-control" id="empresa" name="empresa" >
+                    <div class="mb-3 col-6">
+                        <label class="form-label">Empresa</label>
+                        <input type="text" class="form-control" id="empresa" name="empresa" placeholder="Empresa">
                     </div>
-                    </div>
-    
+
+
+                    <div class="mb-3 col-3">
+                        <label class="form-label">Registro</label>
+                        <input type="text" class="form-control" id="registro" name="registro" placeholder="Ingrese el #">
+                    </div>      
         </div>
 
-        <div class="row my-2">
+        <div class="row">
 
-                    <div class="col-6">
-                    <div class="input-group">
-                        <span class="input-group-text">Ubicación</span>
-                        <input type="text" class="form-control" id="direccion" name="direccion" >
-                    </div>
+                    <div class="mb-3 col-6">
+                        <label class="form-label">Ubicación</label>
+                        <input type="text" class="form-control" id="direccion" name="direccion" placeholder="">
                     </div>
 
 
-                    <div class="col-6">
-                        <div class="input-group">
-                        <span class="input-group-text">Contacto 1</span>
-                        <input type="text" class="form-control" id="contacto1" name="contacto1" >
-                    </div>    
-                    </div>     
+                    <div class="mb-3 col-3">
+                        <label class="form-label">Contacto 1</label>
+                        <input type="text" class="form-control" id="contacto1" name="contacto1" placeholder="Ingrese el contacto">
+                    </div>      
         </div>
 
-        <div class="row my-2" >
+        <div class="row">
 
-                    <div class="col-6">
-                    <div class="input-group">
-                        <span class="input-group-text">Orden</span>
+                    <div class="mb-3 col-6">
+                        <label class="form-label">Orden</label>
                         <input type="text" class="form-control" id="orden" name="orden" placeholder="">
                     </div>
+
+
+                    <div class="mb-3 col-3">
+                        <label class="form-label">Contacto 2</label>
+                        <input type="text" class="form-control" id="contacto2" name="contacto2" placeholder="Ingrese el contacto">
+                    </div>      
+        </div>
+
+        <div class="row">
+
+                    <div class="mb-3 col-6">
+                        <label class="form-label">Garantia</label>
+                        <input type="text" class="form-control" id="garantia" name="garantia" placeholder="">
                     </div>
 
 
-                    <div class="col-6">
-                    <div class="input-group">
-                        <span class="input-group-text">Contacto 2</span>
-                        <input type="text" class="form-control" id="contacto2" name="contacto2" >
+                    <div class="mb-3 col-3">
+                        <label class="form-label">Registro</label>
+                        <input type="text" class="form-control" id="registro2" name="registro2" placeholder="Ingrese el #">
                     </div>     
-                    </div>  
-        </div>
-
-        <div class="row my-2" >
-
-                    <div class="col-6">
-                    <div class="input-group">
-                        <span class="input-group-text">Garantia del trabajo</span>
-                        <input type="text" class="form-control" id="garantia" name="garantia" >
-                    </div>
-                    </div>
-
-
-                    <div class="col-6">
-                    <div class="input-group">
-                        <span class="input-group-text">Registro</span>
-                        <input type="text" class="form-control" id="registro2" name="registro2" >
-                    </div>  
+                    <div class="mb-3 col-3">
+                        <label class="form-label">Email</label>
+                        <input type="text" class="form-control" id="correo" name="correo" placeholder="Ingrese el Email">
                     </div>   
-                      
         </div>
-
-        <div class="row my-2">
-
-                    <div class="col-6">
-                        
-                    </div>
-
-
-                    <div class="col-6">
-                    <div class="input-group">
-                    <span class="input-group-text">Email</span>
-                        <input type="text" class="form-control" id="correo" name="correo" >
-                    </div> 
-                    </div>  
-
-
-        </div>
-
-        <div class="row my-3">
-
-                    <div class="col-6 text-center">
-                     <h3>Tenemos el gusto de cotizarle:</h3>
-                    </div>
-
-
-                    <div class="col-6">
-                    <div class="input-group">
-                    <span class="input-group-text">Proveedor No.</span>
-                        <input type="text" class="form-control" id="correo" name="correo" >
-                    </div> 
-                    </div>  
-
-
-        </div>
-
-
         @foreach($productos as $producto)
         
         <input type="text" hidden id="det{{ $producto->id }}" value="{{ $producto->Descripcion }}"> 
@@ -169,7 +118,7 @@
         <input type="text" hidden id="pre{{ $producto->id }}" value="{{ $producto->Precio }}"> 
         
         @endforeach
-<hr>
+
         <div class="row">
             
                     <div class="mb-3 col-6">
@@ -195,26 +144,18 @@
         <div class="row">
             <div class="mb-3 col-2">
                 <label class="form-label">Detalle </label>
-                        <input type="text" class="form-control" id="detalle" name="detalle" >
+                        <input type="text" class="form-control" id="detalle" name="detalle" placeholder="Ingrese descripción">
             </div>
             <div class=" col-1 " >
             
                 <label class="form-label">Cantidad </label>
-                        <input type="text" class="form-control" id="cantidad" name="cantidad" onChange="totalizar()">
-                
-            </div>  
-            
-
-            <div class=" col-1 " >
-            
-                <label class="form-label">Existencia</label>
-                        <input type="text" class="form-control" id="existencia" name="existencia" >
+                        <input type="text" class="form-control" id="cantidad" name="cantidad" placeholder="Ingrese cantidad" onChange="totalizar()">
                 
             </div>  
             <div class=" col-1 " >
             
                 <label class="form-label">Precio Unit. </label>
-                        <input type="text" class="form-control" id="precio" name="precio"  onChange="totalizar()">
+                        <input type="text" class="form-control" id="precio" name="precio" placeholder="Ingrese Precio" onChange="totalizar()">
                 
             </div> 
             <div class=" col-1 " >
@@ -250,7 +191,6 @@
                     <button type="submit" class="btn btn-primary">Guardar</button>
 
                 </form>
-                </div>
                 </div>
             </div>
         </div>
