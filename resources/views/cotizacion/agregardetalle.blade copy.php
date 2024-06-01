@@ -28,137 +28,86 @@
 
                     
                     
-                <form action="/cotizacion/detalleconcabe" method="get">
+                    <form action="/cotizacion/detalleadd" method="get">
                         @csrf
                                 @method('GET')
-<div class="container">
+        <div class="row">
 
-        <div class="row my-2">
-
-                    <div class="col-6">
-                        
-                        <div class="input-group">
-                        <span class="input-group-text">Atencion</span>
-                        <input type="text" class="form-control" id="nombre" name="nombre">
- 
-                        </div>
+                    <div class="mb-3 col-6">
+                        <label class="form-label">Atención</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" value="{{ $cotiactual[0]->nombre }}">
                     </div>
 
 
-                    <div class="col-3">
-                    <div class="input-group">
-                        <span class="input-group-text" >Cotización</span>
-                        <input type="text" class="form-control" id="codigo" name="codigo">
-
-                    </div>
+                    <div class="mb-3 col-3">
+                        <label class="form-label">Cotización</label>
+                        <input type="text" class="form-control" id="codigo" name="codigo" value="{{ $cotiactual[0]->codigo }}" >
                     </div>
 
-                    <div class="col-3">
-                    <div class="input-group">
-                        <span class="input-group-text">Fecha</span>
-                        <input type="date" class="form-control" id="fecha" name="fecha" >
-                    </div>
+                    <div class="mb-3 col-3">
+                        <label class="form-label">Fecha</label>
+                        <input type="text" class="form-control" id="telefono" name="telefono" value="{{ $cotiactual[0]->fecha }}">
                     </div>
         </div>
 
-        <div class="row my-2">
+        <div class="row">
 
-                    <div class=" col-6">
-                    <div class="input-group">
-                        <span class="input-group-text">Empresa</span>
-                        <input type="text" class="form-control" id="empresa" name="empresa" >
+                    <div class="mb-3 col-6">
+                        <label class="form-label">Empresa</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" value="{{ $cotiactual[0]->empresa }}">
                     </div>
-                    </div>
-    
+
+
+                    <div class="mb-3 col-3">
+                        <label class="form-label">Registro</label>
+                        <input type="text" class="form-control" id="telefono" name="telefono" value="{{ $cotiactual[0]->NCR }}">
+                    </div>      
         </div>
 
-        <div class="row my-2">
+        <div class="row">
 
-                    <div class="col-6">
-                    <div class="input-group">
-                        <span class="input-group-text">Ubicación</span>
-                        <input type="text" class="form-control" id="direccion" name="direccion" >
-                    </div>
+                    <div class="mb-3 col-6">
+                        <label class="form-label">Ubicación</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre"value="{{ $cotiactual[0]->direccion }}">
                     </div>
 
 
-                    <div class="col-6">
-                        <div class="input-group">
-                        <span class="input-group-text">Contacto 1</span>
-                        <input type="text" class="form-control" id="contacto1" name="contacto1" >
-                    </div>    
+                    <div class="mb-3 col-3">
+                        <label class="form-label">Contacto 1</label>
+                        <input type="text" class="form-control" id="telefono" name="telefono" value="{{ $cotiactual[0]->contacto1 }}">
+                    </div>      
+        </div>
+
+        <div class="row">
+
+                    <div class="mb-3 col-6">
+                        <label class="form-label">Orden</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" value="{{ $cotiactual[0]->orden }}">
+                    </div>
+
+
+                    <div class="mb-3 col-3">
+                        <label class="form-label">Contacto 2</label>
+                        <input type="text" class="form-control" id="telefono" name="telefono" value="{{ $cotiactual[0]->contacto2 }}">
+                    </div>      
+        </div>
+
+        <div class="row">
+
+                    <div class="mb-3 col-6">
+                        <label class="form-label">Garantia</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" value="{{ $cotiactual[0]->garantia }}">
+                    </div>
+
+
+                    <div class="mb-3 col-3">
+                        <label class="form-label">Registro</label>
+                        <input type="text" class="form-control" id="telefono" name="telefono" >
                     </div>     
-        </div>
-
-        <div class="row my-2" >
-
-                    <div class="col-6">
-                    <div class="input-group">
-                        <span class="input-group-text">Orden</span>
-                        <input type="text" class="form-control" id="orden" name="orden" placeholder="">
-                    </div>
-                    </div>
-
-
-                    <div class="col-6">
-                    <div class="input-group">
-                        <span class="input-group-text">Contacto 2</span>
-                        <input type="text" class="form-control" id="contacto2" name="contacto2" >
-                    </div>     
-                    </div>  
-        </div>
-
-        <div class="row my-2" >
-
-                    <div class="col-6">
-                    <div class="input-group">
-                        <span class="input-group-text">Garantia del trabajo</span>
-                        <input type="text" class="form-control" id="garantia" name="garantia" >
-                    </div>
-                    </div>
-
-
-                    <div class="col-6">
-                    <div class="input-group">
-                        <span class="input-group-text">Registro</span>
-                        <input type="text" class="form-control" id="registro2" name="registro2" >
-                    </div>  
+                    <div class="mb-3 col-3">
+                        <label class="form-label">Email</label>
+                        <input type="text" class="form-control" id="telefono" name="telefono" value="{{ $cotiactual[0]->correo }}">
                     </div>   
-                      
-        </div>
-
-        <div class="row my-2">
-
-                    <div class="col-6">
-                        
-                    </div>
-
-
-                    <div class="col-6">
-                    <div class="input-group">
-                    <span class="input-group-text">Email</span>
-                        <input type="text" class="form-control" id="correo" name="correo" >
-                    </div> 
-                    </div>  
-
-
-        </div>
-
-        <div class="row my-3">
-
-                    <div class="col-6 text-center">
-                     <h3>Tenemos el gusto de cotizarle:</h3>
-                    </div>
-
-
-                    <div class="col-6">
-                    <div class="input-group">
-                    <span class="input-group-text">Proveedor No.</span>
-                        <input type="text" class="form-control" id="correo" name="correo" >
-                    </div> 
-                    </div>  
-
-
         </div>
         @foreach($productos as $producto)
         
@@ -167,7 +116,7 @@
         <input type="text" hidden id="pre{{ $producto->id }}" value="{{ $producto->Precio }}"> 
         
         @endforeach
-<hr>
+
         <div class="row">
             <form action="" class="row g-2" method="get">
                     <div class="mb-3 col-6">
@@ -201,17 +150,6 @@
                         <input type="text" class="form-control" id="cantidad" name="cantidad" placeholder="Ingrese cantidad" onChange="totalizar()">
                 
             </div>  
-
-
-            <div class=" col-1 " >
-            
-                <label class="form-label">Existencia</label>
-                        <input type="text" class="form-control" id="existencia" name="existencia" readonly>
-                
-            </div>  
-
-
-
             <div class=" col-1 " >
             
                 <label class="form-label">Precio Unit. </label>
@@ -227,7 +165,7 @@
             <div class=" col-1 " >
             
                 <label class="form-label">Recargado</label>
-                        <input type="text" class="form-control" id="recarga" name="recarga" onChange="preciounit()">
+                        <input type="text" class="form-control" id="recarga" name="recarga">
                 
             </div> 
 
@@ -317,7 +255,7 @@ var id = selectObject.value;
 //var cant = document.getElementById('can1').text; 
 var canti = document.getElementById('can' + id).value ;
 
-document.getElementById("existencia").value = canti;
+document.getElementById("cantidad").value = canti;
 
 var deta = document.getElementById('det' + id).value ;
 
@@ -340,20 +278,6 @@ function totalizar() {
     document.getElementById("total").value = preci * canti ;
 
 }
-
-function preciounit() {
-
-const preuni = parseFloat(document.getElementById("precio").value); 
-const subtotal2 = parseFloat(document.getElementById("recarga").value); 
-
-const total = preuni * subtotal2 ;
-//const total = subtotal;               
-
-
-document.getElementById("unirecarga").value = total ;
-
-}
-
 
 </script>
 @endsection

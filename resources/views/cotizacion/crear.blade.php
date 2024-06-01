@@ -208,7 +208,7 @@
             <div class=" col-1 " >
             
                 <label class="form-label">Existencia</label>
-                        <input type="text" class="form-control" id="existencia" name="existencia" >
+                        <input type="text" class="form-control" id="existencia" name="existencia" readonly>
                 
             </div>  
             <div class=" col-1 " >
@@ -226,7 +226,7 @@
             <div class=" col-1 " >
             
                 <label class="form-label">Recargado</label>
-                        <input type="text" class="form-control" id="recarga" name="recarga">
+                        <input type="text" class="form-control" id="recarga" name="recarga" onChange="preciounit()">
                 
             </div> 
 
@@ -279,7 +279,7 @@ var id = selectObject.value;
 //var cant = document.getElementById('can1').text; 
 var canti = document.getElementById('can' + id).value ;
 
-document.getElementById("cantidad").value = canti;
+document.getElementById("existencia").value = canti;
 
 var deta = document.getElementById('det' + id).value ;
 
@@ -303,7 +303,39 @@ function totalizar() {
 
 }
 
+function preciounit() {
+
+                 const preuni = parseFloat(document.getElementById("precio").value); 
+                 const subtotal2 = parseFloat(document.getElementById("recarga").value); 
+                
+                 const total = preuni * subtotal2 ;
+                 //const total = subtotal;               
+                 
+
+document.getElementById("unirecarga").value = total ;
+
+}
+
 </script>
+
+
+
+
+<script>
+        
+
+        $(document).ready(function() {
+         
+                              $("#recarga").change(function() {
+                                                                            
+                 
+        
+                           });
+        
+
+                        });
+    </script>
+
 @endsection
 
 
