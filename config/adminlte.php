@@ -318,7 +318,7 @@ return [
         [
             'text' => 'Personal',
             'url' => 'personal',
-            'icon' => 'far fa-fw fa-file',
+            'icon' => 'far fa-fw fa-user',
             
             'label_color' => 'success',
         ],
@@ -334,14 +334,22 @@ return [
         [
             'text' => 'Proveedores',
             'url' => 'proveedor',
-            'icon' => 'far fa-fw fa-file',
+            'icon' => 'fas fa-truck',
             
             'label_color' => 'success',
         ],
         [
             'text' => 'Inventario',
             'url' => 'producto',
-            'icon' => 'far fa-fw fa-file',
+            'icon' => 'fas fa-boxes',
+            
+            'label_color' => 'success',
+        ],
+
+        [
+            'text' => 'Compras',
+            'url' => 'compra',
+            'icon' => 'fas fa-cart-plus',
             
             'label_color' => 'success',
         ],
@@ -349,7 +357,7 @@ return [
         [
             'text' => 'Cotización',
             'url' => 'cotizacion',
-            'icon' => 'far fa-fw fa-file',
+            'icon' => 'fas fa-file-invoice',
             
             'label_color' => 'success',
         ],

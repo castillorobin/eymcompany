@@ -49,15 +49,15 @@
                         
                             <td class="opciones text-center" style="">
                                 <a href="/proveedor/ver">
-                                <button type="button" class="btn btn-primary">Ver</button>
+                                <button type="button" class="btn btn-primary"><i class="fas fa-eye"></i></button>
                             </a>           
 
                             <a href="/proveedor/editar/{{ $proveedores[$i]->id }}">
-                                <button type="button" class="btn btn-warning">Editar</button>
+                                <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
                             </a>
 
                                 <a href="/proveedor/borrar/{{ $proveedores[$i]->id }}">
-                                <button type="button" class="btn btn-danger">Borrar</button>
+                                <button type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
                                 </a>
  
                             </td>

@@ -3,7 +3,7 @@
 @section('title', 'Proveedor')
 
 @section('content_header')
-    <h1>Listado de Clientes</h1>
+    <h1>Listado de Compras</h1>
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.5/css/dataTables.dataTables.css" />
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 @stop
@@ -31,32 +31,32 @@
                             <tr >
                                 
                                 <th scope="col">ID</th>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Telefono</th>
-                                <th scope="col">Direccion</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Proveedor</th>
+                                <th scope="col">Total</th>
                                 <th scope="col">Accion</th>
                             </tr>
                         </thead>
                         <tbody>
                             
-                            @for ($i=0; $i< count($clientes); $i++)
+                            @for ($i=0; $i< count($compras); $i++)
                             <tr >
-                            <td>{{ $clientes[$i]->id }}</td>
+                            <td>{{ $compras[$i]->id }}</td>
                            
-                            <td>{{ $clientes[$i]->Nombre }}</td>
-                            <td>{{ $clientes[$i]->Telefono }}</td>
-                            <td>{{ $clientes[$i]->Direccion }}</td>
+                            <td>{{ $compras[$i]->Fecha }}</td>
+                            <td>{{ $compras[$i]->Proveedor }}</td>
+                            <td>{{ $compras[$i]->Total }}</td>
                         
                             <td class="opciones text-center" style="">
                                 <a href="/cliente/ver">
                                 <button type="button" class="btn btn-primary"><i class="fas fa-eye"></i></button>
                             </a>           
 
-                            <a href="/cliente/editar/{{ $clientes[$i]->id }}">
+                            <a href="/cliente/editar/{{ $compras[$i]->id }}">
                                 <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
                             </a>
 
-                                <a href="/cliente/borrar/{{ $clientes[$i]->id }}">
+                                <a href="/cliente/borrar/{{ $compras[$i]->id }}">
                                 <button type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
                             </a>
                         
