@@ -56,6 +56,8 @@ Route::get('/producto/guardar', [App\Http\Controllers\ProductoController::class,
 Route::get('/producto/borrar/{id}', [App\Http\Controllers\ProductoController::class, 'destroy'])->name('borrarpr');
 Route::get('/producto/editar/{id}', [App\Http\Controllers\ProductoController::class, 'edit'])->name('editarpr');
 Route::get('/producto/update/{id}', [App\Http\Controllers\ProductoController::class, 'update'])->name('updatepr');
+Route::get('/producto/cargar', [App\Http\Controllers\ProductoController::class, 'cargar'])->name('cargarp');
+Route::get('/producto/descarga', [App\Http\Controllers\ProductoController::class, 'descarga'])->name('descargap');
 
 
 // Cotizaciones

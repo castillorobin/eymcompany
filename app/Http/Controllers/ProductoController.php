@@ -16,6 +16,39 @@ class ProductoController extends Controller
         $productos = Producto::all();
         return view('producto.index', compact('productos'));
     }
+    public function cargar(Request $request)
+    {
+        $id = $request->get('idcarga');  
+
+        $cargando = $request->get('cargando'); 
+        $cantidad = $request->get('cantidad'); 
+
+        $producto = Producto::find($id);
+
+        $producto->Cantidad =  $cantidad + $cargando; 
+        $producto->save();
+
+        
+        $productos = Producto::all();
+        return view('producto.index', compact('productos'));
+    }
+
+    public function descarga(Request $request)
+    {
+        $id = $request->get('iddesca');  
+
+        $cargando = $request->get('cargandodes'); 
+        $cantidad = $request->get('cantidaddes'); 
+
+        $producto = Producto::find($id);
+
+        $producto->Cantidad =  $cantidad - $cargando; 
+        $producto->save();
+
+        
+        $productos = Producto::all();
+        return view('producto.index', compact('productos'));
+    }
 
     /**
      * Show the form for creating a new resource.
