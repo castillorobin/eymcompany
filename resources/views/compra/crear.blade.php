@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Cotización')
+@section('title', 'Compra')
 
 @section('content_header')
-    <h1>Agregar Cotización</h1>
+    <h1>Agregar Compra</h1>
   
 
 @stop
@@ -28,7 +28,7 @@
 
                     
                     
-                    <form action="/cotizacion/detalleconcabe" method="get">
+                    <form action="/cotizacion/de" method="get">
                         @csrf
                                 @method('GET')
 <div class="container">
@@ -38,8 +38,8 @@
                     <div class="col-6">
                         
                         <div class="input-group">
-                        <span class="input-group-text">Atencion</span>
-                        <input type="text" class="form-control" id="nombre" name="nombre">
+                        <span class="input-group-text">Fecha</span>
+                        <input type="date" class="form-control" id="fecha" name="fecha">
  
                         </div>
                     </div>
@@ -47,17 +47,14 @@
 
                     <div class="col-3">
                     <div class="input-group">
-                        <span class="input-group-text" >Cotización</span>
-                        <input type="text" class="form-control" id="codigo" name="codigo">
+                        <span class="input-group-text" >Credito fiscal</span>
+                        <input type="text" class="form-control" id="ccf" name="ccf">
 
                     </div>
                     </div>
 
                     <div class="col-3">
-                    <div class="input-group">
-                        <span class="input-group-text">Fecha</span>
-                        <input type="date" class="form-control" id="fecha" name="fecha" >
-                    </div>
+                    
                     </div>
         </div>
 
@@ -65,8 +62,20 @@
 
                     <div class=" col-6">
                     <div class="input-group">
-                        <span class="input-group-text">Empresa</span>
-                        <input type="text" class="form-control" id="empresa" name="empresa" >
+                        <span class="input-group-text">Proveedor</span>
+                        <select class="form-control" name="proveedor" id="proveedor">
+                            @foreach ($proveedores as $proveedor)
+                            <option value="{{ $proveedor->Nombre }}">{{ $proveedor->Nombre }}</option>
+                            @endforeach
+                            
+                        </select>
+                    </div>
+                    </div>
+
+                    <div class="col-3">
+                    <div class="input-group">
+                        <span class="input-group-text">Total</span>
+                        <input type="text" class="form-control" id="total" name="total" >
                     </div>
                     </div>
     
@@ -76,73 +85,18 @@
 
                     <div class="col-6">
                     <div class="input-group">
-                        <span class="input-group-text">Ubicación</span>
-                        <input type="text" class="form-control" id="direccion" name="direccion" >
+                        <span class="input-group-text">Nota</span>
+                        <textarea name="nota" id="nota" cols="65"></textarea>
                     </div>
                     </div>
 
 
-                    <div class="col-6">
-                        <div class="input-group">
-                        <span class="input-group-text">Contacto 1</span>
-                        <input type="text" class="form-control" id="contacto1" name="contacto1" >
-                    </div>    
-                    </div>     
+                     
         </div>
 
-        <div class="row my-2" >
+        
+        
 
-                    <div class="col-6">
-                    <div class="input-group">
-                        <span class="input-group-text">Orden</span>
-                        <input type="text" class="form-control" id="orden" name="orden" placeholder="">
-                    </div>
-                    </div>
-
-
-                    <div class="col-6">
-                    <div class="input-group">
-                        <span class="input-group-text">Contacto 2</span>
-                        <input type="text" class="form-control" id="contacto2" name="contacto2" >
-                    </div>     
-                    </div>  
-        </div>
-
-        <div class="row my-2" >
-
-                    <div class="col-6">
-                    <div class="input-group">
-                        <span class="input-group-text">Garantia del trabajo</span>
-                        <input type="text" class="form-control" id="garantia" name="garantia" >
-                    </div>
-                    </div>
-
-
-                    <div class="col-6">
-                    <div class="input-group">
-                        <span class="input-group-text">Registro</span>
-                        <input type="text" class="form-control" id="registro2" name="registro2" >
-                    </div>  
-                    </div>   
-                      
-        </div>
-
-        <div class="row my-2">
-
-                    <div class="col-6">
-                        
-                    </div>
-
-
-                    <div class="col-6">
-                    <div class="input-group">
-                    <span class="input-group-text">Email</span>
-                        <input type="text" class="form-control" id="correo" name="correo" >
-                    </div> 
-                    </div>  
-
-
-        </div>
 
       
 
