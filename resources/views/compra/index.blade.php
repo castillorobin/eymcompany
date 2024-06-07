@@ -59,6 +59,9 @@
                                 <a href="/cliente/borrar/{{ $compras[$i]->id }}">
                                 <button type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
                             </a>
+                            <a href="/compra/verpdf/{{ $compras[$i]->id }}"">
+                                <button type="button" class="btn btn-danger"><i class="fas fa-file-pdf"></i></button>
+                            </a>
                         
                             </td>
                             </tr>
