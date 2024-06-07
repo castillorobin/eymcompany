@@ -71,7 +71,7 @@ Route::get('/cotizacion/detalleconcabe', [App\Http\Controllers\CotizacioncContro
 
 //Compras
 Route::get('/compra', [App\Http\Controllers\ComprasController::class, 'index'])->name('indexcomp');
-Route::get('/compra/ver', [App\Http\Controllers\ComprasController::class, 'ver'])->name('vercomp');
+Route::get('/compra/ver/{id}', [App\Http\Controllers\ComprasController::class, 'ver'])->name('vercomp');
 Route::get('/compra/crear', [App\Http\Controllers\ComprasController::class, 'create'])->name('crearcomp');
 Route::get('/compra/guardarenc', [App\Http\Controllers\ComprasController::class, 'guardarenc'])->name('guardarenc');
 Route::get('/compra/guardardet', [App\Http\Controllers\ComprasController::class, 'guardardet'])->name('guardardet');

@@ -24,13 +24,14 @@ class CotizacioncController extends Controller
      */
     public function create()
     {
-        $marca=Cotidetalle::all();
+       /* $marca=Cotidetalle::all();
      foreach($marca as $mar){
         $mar->delete();
-     }
-        $clientes = Cliente::all();
+     }*/
+
+        //$clientes = Cliente::all();
         $productos = Producto::all();
-        return view('cotizacion.crear', compact('clientes', 'productos'));
+        return view('cotizacion.crear', compact('productos'));
     }
 
     public function detalleconcabe(Request $request)
@@ -72,7 +73,7 @@ class CotizacioncController extends Controller
      {
         //$detalles = new Cotidetalle();
         $detalle = new Cotidetalle();
-        
+         
         $detalle->descripcion = $request->get('detalle');
         $detalle->cantidad = $request->get('cantidad');
         $detalle->preciouni = $request->get('precio');

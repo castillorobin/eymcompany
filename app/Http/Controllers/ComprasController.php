@@ -28,7 +28,16 @@ class ComprasController extends Controller
     public function create()
     {
         $proveedores = Proveedor::all();
-        return view('compra.crear', compact('proveedores'));
+        $detalles = Detallecompra::all();
+        return view('compra.crear', compact('proveedores', 'detalles'));
+    }
+
+    public function ver($id)
+    {
+        //$proveedores = Proveedor::all();
+        $detalles = Detallecompra::where('idcompra', $id)->get();
+        $ultimoid = Compras::find($id);
+        return view('compra.ver', compact('ultimoid', 'detalles'));
     }
 
     public function guardarenc(Request $request)

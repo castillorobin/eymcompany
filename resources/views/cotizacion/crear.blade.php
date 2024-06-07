@@ -213,13 +213,13 @@
             </div>  
             <div class=" col-1 " >
             
-                <label class="form-label">Precio Unit. </label>
+                <label class="form-label">Costo</label>
                         <input type="text" class="form-control" id="precio" name="precio"  onChange="totalizar()">
                 
             </div> 
             <div class=" col-1 " >
             
-                <label class="form-label">Precio Total</label>
+                <label class="form-label">Total</label>
                         <input type="text" class="form-control" id="total" name="total">
                 
             </div> 

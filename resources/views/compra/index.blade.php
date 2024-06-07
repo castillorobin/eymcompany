@@ -48,7 +48,7 @@
                             <td>{{ $compras[$i]->Total }}</td>
                         
                             <td class="opciones text-center" style="">
-                                <a href="/cliente/ver">
+                                <a href="/compra/ver/{{ $compras[$i]->id }}">
                                 <button type="button" class="btn btn-primary"><i class="fas fa-eye"></i></button>
                             </a>           
 
