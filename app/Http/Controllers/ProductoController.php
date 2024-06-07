@@ -12,7 +12,7 @@ class ProductoController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
+    { 
         $productos = Producto::all();
         return view('producto.index', compact('productos'));
     }

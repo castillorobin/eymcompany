@@ -26,7 +26,8 @@ class ComprasController extends Controller
      */
     public function create()
     {
-        //
+        $proveedores = Proveedor::all();
+        return view('compra.crear', compact('proveedores'));
     }
 
     /**

@@ -19,7 +19,7 @@
             <div class="card card-default">
                 <div class="card-header">
                     <span class="card-title">Compras</span>
-                    <a href="/cliente/crear">
+                    <a href="/compra/crear">
                     <button type="button" class="btn btn-success" style="float: right;">Agregar Compra</button>
                 </a>
                 </div>

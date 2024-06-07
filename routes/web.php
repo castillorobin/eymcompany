@@ -67,7 +67,7 @@ Route::get('/cotizacion/detalleadd', [App\Http\Controllers\CotizacioncController
 Route::get('/cotizacion/borrardet/{id}', [App\Http\Controllers\CotizacioncController::class, 'borrardet'])->name('borrardet');
 Route::get('/cotizacion/detalleconcabe', [App\Http\Controllers\CotizacioncController::class, 'detalleconcabe'])->name('detalleconcabe');
  
-
+ 
 
 //Compras
 Route::get('/compra', [App\Http\Controllers\ComprasController::class, 'index'])->name('indexcomp');
