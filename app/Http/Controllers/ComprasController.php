@@ -7,6 +7,7 @@ use App\Models\Producto;
 use App\Models\Proveedor;
 use App\Models\Compras;
 use App\Models\Detallecompra;
+use \PDF;
 
 use Illuminate\Http\Request;
 
@@ -38,6 +39,19 @@ class ComprasController extends Controller
         $detalles = Detallecompra::where('idcompra', $id)->get();
         $ultimoid = Compras::find($id);
         return view('compra.ver', compact('ultimoid', 'detalles'));
+    }
+
+    
+    public function verpdf($id)
+    {
+        //$proveedores = Proveedor::all();
+        $detalles = Detallecompra::where('idcompra', $id)->get();
+        $ultimoid = Compras::find($id);
+
+        $pdf = PDF::loadView('compra.facturacompra', ['detalles'=>$detalles, 'ultimoid'=>$ultimoid]);
+        return $pdf->stream();
+
+        //return view('cotizacion.ver', compact('cotiactual', 'detalles'));
     }
 
     public function guardarenc(Request $request)

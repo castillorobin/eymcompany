@@ -66,6 +66,7 @@ Route::get('/cotizacion/crear', [App\Http\Controllers\CotizacioncController::cla
 Route::get('/cotizacion/detalleconcabe', [App\Http\Controllers\CotizacioncController::class, 'detalleconcabe'])->name('detalleconcabe');
 Route::get('/cotizacion/detalleadd', [App\Http\Controllers\CotizacioncController::class, 'detalleadd'])->name('detalleadd');
 Route::get('/cotizacion/ver/{id}', [App\Http\Controllers\CotizacioncController::class, 'ver'])->name('verco');
+Route::get('/cotizacion/verpdf/{id}', [App\Http\Controllers\CotizacioncController::class, 'verpdf'])->name('verpdf');
 
 Route::get('/cotizacion/borrardet/{id}', [App\Http\Controllers\CotizacioncController::class, 'borrardet'])->name('borrardet');
 
@@ -75,6 +76,7 @@ Route::get('/cotizacion/borrardet/{id}', [App\Http\Controllers\CotizacioncContro
 //Compras
 Route::get('/compra', [App\Http\Controllers\ComprasController::class, 'index'])->name('indexcomp');
 Route::get('/compra/ver/{id}', [App\Http\Controllers\ComprasController::class, 'ver'])->name('vercomp');
+Route::get('/compra/verpdf/{id}', [App\Http\Controllers\ComprasController::class, 'verpdf'])->name('verpdfc');
 Route::get('/compra/crear', [App\Http\Controllers\ComprasController::class, 'create'])->name('crearcomp');
 Route::get('/compra/guardarenc', [App\Http\Controllers\ComprasController::class, 'guardarenc'])->name('guardarenc');
 Route::get('/compra/guardardet', [App\Http\Controllers\ComprasController::class, 'guardardet'])->name('guardardet');

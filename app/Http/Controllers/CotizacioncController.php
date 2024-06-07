@@ -42,6 +42,18 @@ class CotizacioncController extends Controller
         return view('cotizacion.ver', compact('cotiactual', 'detalles'));
     }
 
+    public function verpdf($id)
+    {
+        //$proveedores = Proveedor::all();
+        $detalles = Cotidetalle::where('coticode', $id)->get();
+        $cotiactual = Cotizacionc::where('codigo', $id)->get();
+
+        $pdf = PDF::loadView('cotizacion.facturacompra', ['detalles'=>$detalles, 'cotiactual'=>$cotiactual]);
+        return $pdf->stream();
+
+        //return view('cotizacion.ver', compact('cotiactual', 'detalles'));
+    }
+
     public function detalleconcabe(Request $request)
     {
         $codigo = $request->get('codigo');
