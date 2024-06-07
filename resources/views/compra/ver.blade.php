@@ -137,7 +137,10 @@
 <hr>
 <a href="/compra">
                     <button type="button" class="btn btn-danger">Regresar</button> </a>
-
+                    &nbsp; &nbsp; &nbsp;
+                    <a href="/compra">
+                                        <button type="button" class="btn btn-primary">Generar PDF</button></a>
+                    
                 </div>
                 </div>
             </div>

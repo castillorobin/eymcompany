@@ -34,6 +34,14 @@ class CotizacioncController extends Controller
         return view('cotizacion.crear', compact('productos'));
     }
 
+    public function ver($id)
+    {
+        //$proveedores = Proveedor::all();
+        $detalles = Cotidetalle::where('coticode', $id)->get();
+        $cotiactual = Cotizacionc::where('codigo', $id)->get();
+        return view('cotizacion.ver', compact('cotiactual', 'detalles'));
+    }
+
     public function detalleconcabe(Request $request)
     {
         $codigo = $request->get('codigo');
@@ -52,13 +60,26 @@ class CotizacioncController extends Controller
         $cotienca->correo = $request->get('correo');
 
         $cotienca->save();
+
         $cotiactual = Cotizacionc::where('codigo', $codigo)->get();
 
+        $linea = new Cotidetalle();
+       $linea->coticode = $codigo;
+       $linea->descripcion = $request->get('detalle');
+       $linea->cantidad = $request->get('cantidad');
+       $linea->preciouni = $request->get('precio');
+       $linea->total = $request->get('total');
+       $linea->recargado = $request->get('recarga');
+       $linea->preciorecargo = $request->get('unirecarga');
 
-        $detalles=Cotidetalle::all();
-        $clientes = Cliente::all();
+       $linea->save();
+       $detalles = Cotidetalle::where('coticode', $codigo)->get();
+
+
+        //$detalles=Cotidetalle::all();
+        //$clientes = Cliente::all();
         $productos = Producto::all();
-        return view('cotizacion.agregardetalle', compact('clientes', 'productos', 'detalles', 'cotiactual'));
+        return view('cotizacion.agregardetalle', compact('productos', 'detalles', 'cotiactual'));
     }
 
 
@@ -72,8 +93,12 @@ class CotizacioncController extends Controller
      public function detalleadd(Request $request)
      {
         //$detalles = new Cotidetalle();
+
+        $codigo = $request->get('codigo');
+
         $detalle = new Cotidetalle();
-         
+        
+        $detalle->coticode = $codigo;
         $detalle->descripcion = $request->get('detalle');
         $detalle->cantidad = $request->get('cantidad');
         $detalle->preciouni = $request->get('precio');
@@ -82,12 +107,14 @@ class CotizacioncController extends Controller
         $detalle->preciorecargo = $request->get('unirecarga');
         $detalle->save();
         
-        $codigo = $request->get('codigo');
+        
+
         $cotiactual = Cotizacionc::where('codigo', $codigo)->get();
-       $detalles = Cotidetalle::all();
-       $clientes = Cliente::all();
+       //$detalles = Cotidetalle::all();
+       $detalles = Cotidetalle::where('coticode', $codigo)->get();
+       //$clientes = Cliente::all();
         $productos = Producto::all();
-       return view('cotizacion.agregardetalle', compact('clientes', 'productos', 'detalles', 'cotiactual'));
+       return view('cotizacion.agregardetalle', compact('productos', 'detalles', 'cotiactual'));
          
      }
 

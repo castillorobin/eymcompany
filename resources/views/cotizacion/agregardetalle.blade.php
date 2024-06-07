@@ -28,7 +28,7 @@
 
                     
                     
-                <form action="/cotizacion/detalleconcabe" method="get">
+                <form action="/cotizacion/detalleadd" method="get">
                         @csrf
                                 @method('GET')
 <div class="container">
@@ -39,7 +39,7 @@
                         
                         <div class="input-group">
                         <span class="input-group-text">Atencion</span>
-                        <input type="text" class="form-control" id="nombre" name="nombre">
+                        <input type="text" class="form-control" id="nombre" name="nombre" value="{{ $cotiactual[0]->nombre}}" readonly>
  
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                     <div class="col-3">
                     <div class="input-group">
                         <span class="input-group-text" >Cotización</span>
-                        <input type="text" class="form-control" id="codigo" name="codigo">
+                        <input type="text" class="form-control" id="codigo" name="codigo" value="{{ $cotiactual[0]->codigo}}" readonly>
 
                     </div>
                     </div>
@@ -56,7 +56,7 @@
                     <div class="col-3">
                     <div class="input-group">
                         <span class="input-group-text">Fecha</span>
-                        <input type="date" class="form-control" id="fecha" name="fecha" >
+                        <input type="text" class="form-control" id="fecha" name="fecha" value="{{ $cotiactual[0]->fecha}}" readonly>
                     </div>
                     </div>
         </div>
@@ -66,7 +66,7 @@
                     <div class=" col-6">
                     <div class="input-group">
                         <span class="input-group-text">Empresa</span>
-                        <input type="text" class="form-control" id="empresa" name="empresa" >
+                        <input type="text" class="form-control" id="empresa" name="empresa" value="{{ $cotiactual[0]->empresa}}" readonly>
                     </div>
                     </div>
     
@@ -77,7 +77,7 @@
                     <div class="col-6">
                     <div class="input-group">
                         <span class="input-group-text">Ubicación</span>
-                        <input type="text" class="form-control" id="direccion" name="direccion" >
+                        <input type="text" class="form-control" id="direccion" name="direccion" value="{{ $cotiactual[0]->direccion}}" readonly>
                     </div>
                     </div>
 
@@ -85,7 +85,7 @@
                     <div class="col-6">
                         <div class="input-group">
                         <span class="input-group-text">Contacto 1</span>
-                        <input type="text" class="form-control" id="contacto1" name="contacto1" >
+                        <input type="text" class="form-control" id="contacto1" name="contacto1" value="{{ $cotiactual[0]->contacto1}}" readonly>
                     </div>    
                     </div>     
         </div>
@@ -95,7 +95,7 @@
                     <div class="col-6">
                     <div class="input-group">
                         <span class="input-group-text">Orden</span>
-                        <input type="text" class="form-control" id="orden" name="orden" placeholder="">
+                        <input type="text" class="form-control" id="orden" name="orden" value="{{ $cotiactual[0]->orden}}" readonly >
                     </div>
                     </div>
 
@@ -103,7 +103,7 @@
                     <div class="col-6">
                     <div class="input-group">
                         <span class="input-group-text">Contacto 2</span>
-                        <input type="text" class="form-control" id="contacto2" name="contacto2" >
+                        <input type="text" class="form-control" id="contacto2" name="contacto2" value="{{ $cotiactual[0]->contacto2}}" readonly>
                     </div>     
                     </div>  
         </div>
@@ -113,7 +113,7 @@
                     <div class="col-6">
                     <div class="input-group">
                         <span class="input-group-text">Garantia del trabajo</span>
-                        <input type="text" class="form-control" id="garantia" name="garantia" >
+                        <input type="text" class="form-control" id="garantia" name="garantia" value="{{ $cotiactual[0]->garantia}}" readonly>
                     </div>
                     </div>
 
@@ -121,7 +121,7 @@
                     <div class="col-6">
                     <div class="input-group">
                         <span class="input-group-text">Registro</span>
-                        <input type="text" class="form-control" id="registro2" name="registro2" >
+                        <input type="text" class="form-control" id="registro" name="registro" value="{{ $cotiactual[0]->NCR}}" readonly>
                     </div>  
                     </div>   
                       
@@ -137,7 +137,7 @@
                     <div class="col-6">
                     <div class="input-group">
                     <span class="input-group-text">Email</span>
-                        <input type="text" class="form-control" id="correo" name="correo" >
+                        <input type="text" class="form-control" id="correo" name="correo" value="{{ $cotiactual[0]->correo}}" readonly>
                     </div> 
                     </div>  
 
@@ -214,13 +214,13 @@
 
             <div class=" col-1 " >
             
-                <label class="form-label">Precio Unit. </label>
+                <label class="form-label">Costo</label>
                         <input type="text" class="form-control" id="precio" name="precio" placeholder="Ingrese Precio" onChange="totalizar()">
                 
             </div> 
             <div class=" col-1 " >
             
-                <label class="form-label">Precio Total</label>
+                <label class="form-label">Total</label>
                         <input type="text" class="form-control" id="total" name="total">
                 
             </div> 
@@ -286,7 +286,8 @@
 <a href="/cotizacion">
                     <button type="button" class="btn btn-danger">Cancelar</button> </a>
 &nbsp; &nbsp; &nbsp;
-                    <button type="submit" class="btn btn-primary">Guardar</button>
+<a href="/cotizacion">
+                    <button type="button" class="btn btn-primary">Guardar</button></a>
 
                 </form>
                 </div>

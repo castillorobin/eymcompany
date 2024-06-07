@@ -56,7 +56,7 @@ class ComprasController extends Controller
 
        $ultimoid = Compras::latest('id')->first();
        $idcompr = $ultimoid->id;
-
+ 
        $linea = new Detallecompra();
        $linea->idcompra = $ultimoid->id;
        $linea->descripcion = $request->get('detalle');

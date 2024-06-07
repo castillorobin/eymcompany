@@ -48,7 +48,7 @@
                             <td>{{ $cotizaciones[$i]->fecha }}</td>
                         
                             <td class="opciones text-center" style="">
-                                <a href="/proveedor/ver">
+                                <a href="/cotizacion/ver/{{ $cotizaciones[$i]->codigo }} ">
                                 <button type="button" class="btn btn-primary"><i class="fas fa-eye"></i></button>
                             </a>           
 

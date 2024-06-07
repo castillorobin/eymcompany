@@ -63,9 +63,12 @@ Route::get('/producto/descarga', [App\Http\Controllers\ProductoController::class
 // Cotizaciones
 Route::get('/cotizacion', [App\Http\Controllers\CotizacioncController::class, 'index'])->name('indexco');
 Route::get('/cotizacion/crear', [App\Http\Controllers\CotizacioncController::class, 'create'])->name('crearco');
-Route::get('/cotizacion/detalleadd', [App\Http\Controllers\CotizacioncController::class, 'detalleadd'])->name('detalleadd');
-Route::get('/cotizacion/borrardet/{id}', [App\Http\Controllers\CotizacioncController::class, 'borrardet'])->name('borrardet');
 Route::get('/cotizacion/detalleconcabe', [App\Http\Controllers\CotizacioncController::class, 'detalleconcabe'])->name('detalleconcabe');
+Route::get('/cotizacion/detalleadd', [App\Http\Controllers\CotizacioncController::class, 'detalleadd'])->name('detalleadd');
+Route::get('/cotizacion/ver/{id}', [App\Http\Controllers\CotizacioncController::class, 'ver'])->name('verco');
+
+Route::get('/cotizacion/borrardet/{id}', [App\Http\Controllers\CotizacioncController::class, 'borrardet'])->name('borrardet');
+
  
  
 
