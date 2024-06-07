@@ -28,7 +28,7 @@
 
                     
                     
-                    <form action="/compra/guardarenc" method="get">
+                    <form action="/compra/guardardet" method="get">
                         @csrf
                                 @method('GET')
 <div class="container">
@@ -39,8 +39,8 @@
                         
                         <div class="input-group">
                         <span class="input-group-text">Fecha</span>
-                        <input type="date" class="form-control" id="fecha" name="fecha">
- 
+                        <input type="date" class="form-control" id="fecha" name="fecha" value="{{ $ultimoid->Fecha}}" readonly>
+                        <input type="text" class="form-control" id="id" name="id" value="{{ $ultimoid->id}}" hidden>
                         </div>
                     </div>
 
@@ -48,7 +48,7 @@
                     <div class="col-3">
                     <div class="input-group">
                         <span class="input-group-text" >Credito fiscal</span>
-                        <input type="text" class="form-control" id="ccf" name="ccf">
+                        <input type="text" class="form-control" id="ccf" name="ccf" value="{{ $ultimoid->CCF}}" readonly>
 
                     </div>
                     </div>
@@ -58,24 +58,19 @@
                     </div>
         </div>
 
-        <div class="row my-2">
+        <div class="row my-2">   
 
                     <div class=" col-6">
                     <div class="input-group">
                         <span class="input-group-text">Proveedor</span>
-                        <select class="form-control" name="proveedor" id="proveedor">
-                            @foreach ($proveedores as $proveedor)
-                            <option value="{{ $proveedor->Nombre }}">{{ $proveedor->Nombre }}</option>
-                            @endforeach
-                            
-                        </select>
+                        <input type="text" class="form-control" id="proveedor" name="proveedor" value="{{ $ultimoid->Proveedor}}" readonly>
                     </div>
                     </div>
 
                     <div class="col-3">
                     <div class="input-group">
                         <span class="input-group-text">Total</span>
-                        <input type="text" class="form-control" id="total" name="total" >
+                        <input type="text" class="form-control" id="total" name="total" value="{{ $ultimoid->Total}}" readonly>
                     </div>
                     </div>
     
@@ -86,19 +81,13 @@
                     <div class="col-6">
                     <div class="input-group">
                         <span class="input-group-text">Nota</span>
-                        <textarea name="nota" id="nota" cols="65"></textarea>
+                        <textarea name="nota" id="nota" cols="65" readonly>{{ $ultimoid->Nota}}</textarea>
                     </div>
                     </div>
 
 
                      
         </div>
-
-        
-        
-
-
-      
 
 
       
@@ -148,12 +137,48 @@
         </form>
             </div>   
 </div>
+
+<table id="prove" class="table table-bordered shadow-lg mt-4 cell-border">
+    <thead >
+        <tr >
+            
+            <th scope="col">Descripcion</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Costo</th>
+            <th scope="col">Subtotal</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        
+        @for ($i=0; $i< count($detalles); $i++)
+        <tr >
+        <td>{{ $detalles[$i]->descripcion}}</td>
+       
+        <td>{{ $detalles[$i]->cantidad }}</td>
+        <td>${{ $detalles[$i]->preciouni }}</td>
+        <td>${{ $detalles[$i]->subtotal }}</td>
+        
+    
+        <td class="opciones text-center" style="">
+           
+            <a href="/cotizacion/borr/{{ $detalles[$i]->id }}">
+            <button type="button" class="btn btn-danger">Borrar</button>
+            </a>
+
+        </td>
+        </tr>
+        @endfor
+    </tbody>
+
+    </table>
                     
 <hr>
-<a href="/cotizacion">
+<a href="/compra">
                     <button type="button" class="btn btn-danger">Cancelar</button> </a>
 &nbsp; &nbsp; &nbsp;
-                    <button type="submit" class="btn btn-primary">Guardar</button>
+<a href="/compra">
+                    <button type="button" class="btn btn-primary">Guardar</button> </a>
 
                 </form>
                 </div>

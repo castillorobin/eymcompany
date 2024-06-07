@@ -29,6 +29,7 @@ class ProductoController extends Controller
         $producto->save();
 
         
+        
         $productos = Producto::all();
         return view('producto.index', compact('productos'));
     }
