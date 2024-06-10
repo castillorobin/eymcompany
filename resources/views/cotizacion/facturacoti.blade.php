@@ -209,7 +209,7 @@
         @for ($i=0; $i< count($detalles); $i++)
         
         <tr >
-        <td style="text-align: center;">{{ $detalles[$i]->descripcion }}</td>
+        <td >{{ $detalles[$i]->descripcion }}</td>
        
         <td style="text-align: center;">{{ $detalles[$i]->cantidad }}</td>
         <td style="text-align: center;">${{ $detalles[$i]->preciouni }}</td>
