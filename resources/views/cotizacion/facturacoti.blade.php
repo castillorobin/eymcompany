@@ -21,7 +21,7 @@
 
                     
 <div class="container">
-<img src="/public/logo.png" alt="">
+<img src="../public/logo.png" alt="">
 
 
         <div class="row my-2">
