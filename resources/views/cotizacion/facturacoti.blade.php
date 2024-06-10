@@ -21,11 +21,11 @@
 
                     
 <div class="container">
-
+<img src="/public/logo.png" alt="">
 
 
         <div class="row my-2">
-        <table> 
+        <table border="1"> 
     <tr>
         <td style="width:200px;">
         <div class="col-6">
@@ -38,7 +38,7 @@
                         </div>
                     </div>
         </td>
-        <td>
+        <td style="width:200px;" rowspan="2">
         <div class="col-3">
                     <div class="input-group">
                         <span class="input-group-text" >Cotización: </span>
@@ -47,164 +47,205 @@
                     </div>
                     </div>
         </td>
+
+        <td rowspan="2">
+            <div class="col-4">
+                <div class="input-group">
+                    <span class="input-group-text">Fecha: </span>
+                    <span class="input-group-text">{{ $cotiactual[0]->fecha}}</span>
+                    
+                </div>
+                </div>
+        </td>
         </tr>
 
                     
 
-
+        <tr>
+            <td style="width:200px;">
                    
-
-                    <div class="col-3">
-                    <div class="input-group">
-                        <span class="input-group-text">Fecha</span>
-                        <input type="text" class="form-control" id="fecha" name="fecha" value="{{ $cotiactual[0]->fecha}}" readonly>
-                    </div>
-                    </div>
-        </div>
-
         <div class="row my-2">
 
-                    <div class=" col-6">
-                    <div class="input-group">
-                        <span class="input-group-text">Empresa</span>
-                        <input type="text" class="form-control" id="empresa" name="empresa" value="{{ $cotiactual[0]->empresa}}" readonly>
-                    </div>
-                    </div>
+            <div class=" col-6">
+            <div class="input-group">
+                <span class="input-group-text">Empresa: </span>
+                <span class="input-group-text">{{ $cotiactual[0]->empresa}}</span>
+               
+            </div>
+            </div>
+
+</div>
+</td>
+
+
+</tr>
+<tr>
+    <td style="width:200px;">
+        <div class="col-6">
+            <div class="input-group">
+                <span class="input-group-text">Ubicación: </span>
+                <span class="input-group-text">{{ $cotiactual[0]->direccion}}</span>
+               
+            </div>
+            </div>
+    </td>
+    <td colspan="2">
+        <div class="col-6">
+            <div class="input-group">
+            <span class="input-group-text">Contacto 1: </span>
+            <span class="input-group-text">{{ $cotiactual[0]->contacto1}}</span>
+            
+        </div>    
+        </div>     
+    </td>
     
-        </div>
+</tr>
 
-        <div class="row my-2">
-
-                    <div class="col-6">
-                    <div class="input-group">
-                        <span class="input-group-text">Ubicación</span>
-                        <input type="text" class="form-control" id="direccion" name="direccion" value="{{ $cotiactual[0]->direccion}}" readonly>
-                    </div>
-                    </div>
-
-
-                    <div class="col-6">
-                        <div class="input-group">
-                        <span class="input-group-text">Contacto 1</span>
-                        <input type="text" class="form-control" id="contacto1" name="contacto1" value="{{ $cotiactual[0]->contacto1}}" readonly>
-                    </div>    
-                    </div>     
-        </div>
-
-        <div class="row my-2" >
-
-                    <div class="col-6">
-                    <div class="input-group">
-                        <span class="input-group-text">Orden</span>
-                        <input type="text" class="form-control" id="orden" name="orden" value="{{ $cotiactual[0]->orden}}" readonly >
-                    </div>
-                    </div>
+<tr>
+    <td style="width:200px;">
+        <div class="col-6">
+            <div class="input-group">
+                <span class="input-group-text">Orden: </span>
+                <span class="input-group-text">{{ $cotiactual[0]->orden}}</span>
+               
+            </div>
+            </div>
+    </td>
+    <td colspan="2">
+        <div class="col-6">
+            <div class="input-group">
+            <span class="input-group-text">Contacto 2: </span>
+            <span class="input-group-text">{{ $cotiactual[0]->contacto2}}</span>
+            
+        </div>    
+        </div>     
+    </td>
+    
+</tr>
 
 
-                    <div class="col-6">
-                    <div class="input-group">
-                        <span class="input-group-text">Contacto 2</span>
-                        <input type="text" class="form-control" id="contacto2" name="contacto2" value="{{ $cotiactual[0]->contacto2}}" readonly>
-                    </div>     
-                    </div>  
-        </div>
+<tr>
+    <td style="width:200px;">
+        <div class="col-6">
+            <div class="input-group">
+                <span class="input-group-text">Garantia del trabajo: </span>
+                <span class="input-group-text">{{ $cotiactual[0]->garantia}}</span>
+               
+            </div>
+            </div>
+    </td>
+    <td colspan="2">
+        <div class="col-6">
+            <div class="input-group">
+            <span class="input-group-text">Registro: </span>
+            <span class="input-group-text">{{ $cotiactual[0]->NCR}}</span>
+            
+        </div>    
+        </div>     
+    </td>
+    
+</tr>
 
-        <div class="row my-2" >
-
-                    <div class="col-6">
-                    <div class="input-group">
-                        <span class="input-group-text">Garantia del trabajo</span>
-                        <input type="text" class="form-control" id="garantia" name="garantia" value="{{ $cotiactual[0]->garantia}}" readonly>
-                    </div>
-                    </div>
-
-
-                    <div class="col-6">
-                    <div class="input-group">
-                        <span class="input-group-text">Registro</span>
-                        <input type="text" class="form-control" id="registro" name="registro" value="{{ $cotiactual[0]->NCR}}" readonly>
-                    </div>  
-                    </div>   
-                      
-        </div>
-
-        <div class="row my-2">
-
-                    <div class="col-6">
-                        
-                    </div>
-
-
-                    <div class="col-6">
-                    <div class="input-group">
-                    <span class="input-group-text">Email</span>
-                        <input type="text" class="form-control" id="correo" name="correo" value="{{ $cotiactual[0]->correo}}" readonly>
-                    </div> 
-                    </div>  
-
-
-        </div>
-
-        <div class="row my-3">
-
-                    <div class="col-6 text-center">
-                     <h3>Tenemos el gusto de cotizarle:</h3>
-                    </div>
-
-
-                    <div class="col-6">
-                    <div class="input-group">
-                    <span class="input-group-text">Proveedor No.</span>
-                        <input type="text" class="form-control" id="correo" name="correo" >
-                    </div> 
-                    </div>  
-
-
-        </div>
+<tr>
+    <td style="width:200px; border: 0px solid black; " >
         
-<hr>
-       
-       
+    </td>
+    <td colspan="2">
+        <div class="col-6">
+            <div class="input-group">
+            <span class="input-group-text">Email: </span>
+            <span class="input-group-text">{{ $cotiactual[0]->correo}}</span>
+            
+        </div>    
+        </div>     
+    </td>
+    
+</tr>
+<br>
+<tr>
+    <td style="width:200px;" >
+     
+        <span class="input-group-text">Tenemos el gusto de cotizarle:</span> 
+    </td>
+    <td colspan="2">
+        <div class="col-6">
+            <div class="input-group">
+            <span class="input-group-text">Proveedor: </span>
+            <span class="input-group-text">{{ $cotiactual[0]->correo}}</span>
+            
+        </div>    
+        </div>     
+    </td>
+    
+</tr>
+</table>
+
+<br>
+        </div>
 
 
+         </div>  
+        </div>
 
-
-
-           
+      
            
           
           
             
 </div>
 
-<table id="prove" class="table table-bordered shadow-lg mt-4 cell-border">
+<table id="prove" class="table table-bordered shadow-lg mt-4 cell-border" border="1">
     <thead >
-        <tr >
+        <tr style="background-color:#033dc2; color:white;" >
             
-            <th scope="col">Detalle</th>
-            <th scope="col">Cantidad</th>
-            <th scope="col">Precio</th>
-            <th scope="col">Total</th>
-            <th scope="col">Recargado</th>
-            <th scope="col">Precio Uni Recargado</th>
-            
+            <th scope="col" style="width:400px; text-align: center;">Detalle</th>
+            <th scope="col" style="width:60px; text-align: center;">Cantidad</th>
+            <th scope="col" style="width:60px; text-align: center;">Costo</th>
+           
         </tr>
     </thead>
     <tbody>
-        
+        {{ $subtotal = 0; }}
         @for ($i=0; $i< count($detalles); $i++)
+        
         <tr >
-        <td>{{ $detalles[$i]->descripcion }}</td>
+        <td style="text-align: center;">{{ $detalles[$i]->descripcion }}</td>
        
-        <td>{{ $detalles[$i]->cantidad }}</td>
-        <td>${{ $detalles[$i]->preciouni }}</td>
-        <td>${{ $detalles[$i]->total }}</td>
-        <td>${{ $detalles[$i]->recargado }}</td>
-        <td>${{ $detalles[$i]->preciorecargo }}</td>
+        <td style="text-align: center;">{{ $detalles[$i]->cantidad }}</td>
+        <td style="text-align: center;">${{ $detalles[$i]->preciouni }}</td>
+        {{ $subtotal = $subtotal + $detalles[$i]->total; }}
     
        
         </tr>
         @endfor
+        <tr >
+            <td style="text-align: center; border: 0px solid black; "></td>
+           
+            <td style="text-align: center;">Subtotal: </td>
+            <td style="text-align: center;">${{ $subtotal }}</td>
+          
+        
+           
+            </tr>
+            <tr >
+                <td style="text-align: center; border: 0px solid black; "></td>
+               
+                <td style="text-align: center; font-size:13px;">13% IVA: </td>
+                <td style="text-align: center;">${{ round($subtotal * 0.13, 2) }}</td>
+              
+            
+               
+                </tr>
+                <tr >
+                    <td style="text-align: center; border: 0px solid black; "></td>
+                   
+                    <td style="text-align: center; ">Total: </td>
+                    <td style="text-align: center;">${{ round($subtotal +( $subtotal * 0.13), 2) }}</td>
+                  
+                
+                   
+                    </tr>        
+
     </tbody>
 
     </table>
