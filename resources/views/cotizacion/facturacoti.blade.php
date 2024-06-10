@@ -21,7 +21,7 @@
 
                     
 <div class="container">
-<img src="../public/logo.jpg" alt="" width="200px" style="align-left:180px;">
+<img src="../public/logo.jpg" alt="" width="200px" style="margin-left:180px;">
 
 
         <div class="row my-2">
