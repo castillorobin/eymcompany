@@ -143,4 +143,9 @@ class ComprasController extends Controller
     {
         //
     }
+
+    public function eliminar(string $id)
+    {
+        
+    }
 }

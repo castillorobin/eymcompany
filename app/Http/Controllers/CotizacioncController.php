@@ -7,6 +7,7 @@ use App\Models\Cotizacionc;
 use App\Models\Cliente;
 use App\Models\Producto;
 use App\Models\Cotidetalle;
+use \PDF;
 
 class CotizacioncController extends Controller
 {
@@ -48,8 +49,8 @@ class CotizacioncController extends Controller
         $detalles = Cotidetalle::where('coticode', $id)->get();
         $cotiactual = Cotizacionc::where('codigo', $id)->get();
 
-        $pdf = PDF::loadView('cotizacion.facturacompra', ['detalles'=>$detalles, 'cotiactual'=>$cotiactual]);
-        return $pdf->stream();
+        $pdf = PDF::loadView('cotizacion.facturacoti', ['detalles'=>$detalles, 'cotiactual'=>$cotiactual]);
+        return $pdf->stream(); 
 
         //return view('cotizacion.ver', compact('cotiactual', 'detalles'));
     }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Compras</title>
 
     
 </head>
@@ -24,61 +24,68 @@
 
             <div class="card card-default">
                 <div class="card-header">
-                    <span class="card-title">Ingresar Datos</span>
+                    <span class="card-title"></span>
                     
                 </div>
                 <div class="card-body bg-white">
 
                     
                     
-                    <form action="/compra/guardardet" method="get">
-                        @csrf
-                                @method('GET')
+                    
 <div class="container">
 
         <div class="row my-2">
-
+<table>
+    <tr>
+        <td style="width:200px;">
                     <div class="col-6">
                         
                         <div class="input-group">
-                        <span class="input-group-text">Fecha</span>
-                        <input type="date" class="form-control" id="fecha" name="fecha" value="{{ $ultimoid->Fecha}}" readonly>
-                        <input type="text" class="form-control" id="id" name="id" value="{{ $ultimoid->id}}" hidden>
+                        <span class="input-group-text">Fecha: </span>
+                        <span class="input-group-text">{{ $ultimoid->Fecha}}</span>
+                       
+                        
                         </div>
                     </div>
-
+                    </td>
+                    <td>
 
                     <div class="col-3">
                     <div class="input-group">
-                        <span class="input-group-text" >Credito fiscal</span>
-                        <input type="text" class="form-control" id="ccf" name="ccf" value="{{ $ultimoid->CCF}}" readonly>
+                        <span class="input-group-text" >Credito fiscal: </span>
+                        <span class="input-group-text" >{{ $ultimoid->CCF}}</span>
+                        
 
                     </div>
                     </div>
 
-                    <div class="col-3">
+                    </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                        <div class=" col-6">
+                    <div class="input-group">
+                        <span class="input-group-text">Proveedor:</span>
+                        <span class="input-group-text">{{ $ultimoid->Proveedor}}</span>
+                        
+                    </div>
+                    </div>
+                        </td>
+                        <td>
+                        <div class="col-3">
+                    <div class="input-group">
+                        <span class="input-group-text">Total: </span>
+                        <span class="input-group-text">{{ $ultimoid->Total}}</span>
+                       
+                    </div>
+                    </div>
+                        </td>
+                    </tr>
                     
-                    </div>
         </div>
 
-        <div class="row my-2">   
-
-                    <div class=" col-6">
-                    <div class="input-group">
-                        <span class="input-group-text">Proveedor</span>
-                        <input type="text" class="form-control" id="proveedor" name="proveedor" value="{{ $ultimoid->Proveedor}}" readonly>
-                    </div>
-                    </div>
-
-                    <div class="col-3">
-                    <div class="input-group">
-                        <span class="input-group-text">Total</span>
-                        <input type="text" class="form-control" id="total" name="total" value="{{ $ultimoid->Total}}" readonly>
-                    </div>
-                    </div>
-    
-        </div>
-
+       
         <div class="row my-2">
 
                     <div class="col-6">
@@ -92,7 +99,7 @@
                      
         </div>
 
-
+        </table>
       
 <hr>
         <div class="row">
@@ -108,14 +115,14 @@
         
       
 
-<table id="prove" class="table table-bordered shadow-lg mt-4 cell-border">
+<table id="prove" class="table table-bordered shadow-lg mt-4 cell-border" style="">
     <thead >
         <tr >
-            
-            <th scope="col">Descripcion</th>
-            <th scope="col">Cantidad</th>
-            <th scope="col">Costo</th>
-            <th scope="col">Subtotal</th>
+        
+            <th scope="col" style="border-bottom: 1px solid black;">Descripcion</th>
+            <th scope="col" style="border-bottom: 1px solid black;">Cantidad</th>
+            <th scope="col" style="border-bottom: 1px solid black;">Costo</th>
+            <th scope="col" style="border-bottom: 1px solid black;">Subtotal</th>
            
         </tr>
     </thead>
@@ -123,11 +130,11 @@
         
         @for ($i=0; $i< count($detalles); $i++)
         <tr >
-        <td>{{ $detalles[$i]->descripcion}}</td>
+        <td style="width:400px; border-bottom: 1px solid black;">{{ $detalles[$i]->descripcion}}</td>
        
-        <td>{{ $detalles[$i]->cantidad }}</td>
-        <td>${{ $detalles[$i]->preciouni }}</td>
-        <td>${{ $detalles[$i]->subtotal }}</td>
+        <td style="width:80px; text-align: center; border-bottom: 1px solid black;">{{ $detalles[$i]->cantidad }}</td>
+        <td style="width:80px; text-align: center; border-bottom: 1px solid black;">${{ $detalles[$i]->preciouni }}</td>
+        <td style="width:80px; text-align: center; border-bottom: 1px solid black;">${{ $detalles[$i]->subtotal }}</td>
         
     
         
@@ -137,7 +144,7 @@
 
     </table>
                     
-<hr>
+
 
                 </div>
                 </div>
