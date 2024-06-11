@@ -48,7 +48,7 @@
                     <div class="col-3">
                     <div class="input-group">
                         <span class="input-group-text" >Cotización</span>
-                        <input type="text" class="form-control" id="codigo" name="codigo">
+                        <input type="text" class="form-control" id="codigo" name="codigo" value="{{ $codigocoti }}" readonly>
 
                     </div>
                     </div>

@@ -8,6 +8,7 @@ use App\Models\Cliente;
 use App\Models\Producto;
 use App\Models\Cotidetalle;
 use \PDF;
+use Carbon\Carbon;
 
 class CotizacioncController extends Controller
 {
@@ -31,8 +32,15 @@ class CotizacioncController extends Controller
      }*/
 
         //$clientes = Cliente::all();
+        $ultimoid = Cotizacionc::latest('id')->first();
+       $idcompr = $ultimoid->id + 1;
+
+       $date = Carbon::now();
+       $date = $date->format('Y');
+       $codigocoti = "C"."".$date."".$idcompr;
+
         $productos = Producto::all();
-        return view('cotizacion.crear', compact('productos'));
+        return view('cotizacion.crear', compact('productos', 'codigocoti'));
     }
 
     public function ver($id)
