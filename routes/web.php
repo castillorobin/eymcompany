@@ -50,7 +50,7 @@ Route::get('/cliente/update/{id}', [App\Http\Controllers\ClienteController::clas
 
 //Productos
 Route::get('/producto', [App\Http\Controllers\ProductoController::class, 'index'])->name('indexpr');
-Route::get('/producto/ver', [App\Http\Controllers\ProductoController::class, 'ver'])->name('verpr');
+Route::get('/producto/ver/{id}', [App\Http\Controllers\ProductoController::class, 'ver'])->name('verpr');
 Route::get('/producto/crear', [App\Http\Controllers\ProductoController::class, 'create'])->name('crearpr');
 Route::get('/producto/guardar', [App\Http\Controllers\ProductoController::class, 'store'])->name('guardarpr');
 Route::get('/producto/borrar/{id}', [App\Http\Controllers\ProductoController::class, 'destroy'])->name('borrarpr');

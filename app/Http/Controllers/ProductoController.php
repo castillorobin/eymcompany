@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Producto;
 use App\Models\Proveedor;
+use App\Models\Cardex;
 
 class ProductoController extends Controller
 {
@@ -60,6 +61,14 @@ class ProductoController extends Controller
         return view('producto.crear', compact('proveedores'));
     }
 
+    public function ver($id)
+    {
+       // $proveedores = Proveedor::all();
+       $ultimoid = Producto::find($id);
+       $detalles = Cardex::where('idproducto', $id)->get();
+        return view('producto.ver', compact('ultimoid', 'detalles'));
+    }
+
     /**
      * Store a newly created resource in storage.
      */
@@ -75,9 +84,19 @@ class ProductoController extends Controller
         $producto->Cantidad = $request->get('cantidad');
         $producto->Unidad_medida = $request->get('unidad');
         $producto->Revision = $request->get('revision');
-        
+
         
         $producto->save();
+
+        $ultimoid = Producto::latest('id')->first();
+        $idprod = $ultimoid->id;
+
+        $carde = new Cardex();
+        $carde->idproducto = $idprod;
+        $carde->nota = "Compra Inicial";
+        $carde->tipo = "alta";
+        $carde->Cantidad = $request->get('cantidad');
+        $carde->save();
 
         $productos = Producto::all();
         return view('producto.index', compact('productos'));

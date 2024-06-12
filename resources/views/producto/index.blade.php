@@ -21,10 +21,7 @@
                     <span class="card-title">Productos</span>
                  
                     
-                    <button type="button" class="btn btn-primary mx-3" data-toggle="modal" data-target="#exampleModal" style="float: right;">
-                        <i class="fas fa-arrow-circle-up"></i> Cargar 
-                      </button>
-
+                   
                       <button type="button" class="btn btn-danger mx-3" data-toggle="modal" data-target="#exampleModal2" style="float: right;">
                         <i class="fas fa-arrow-circle-down"></i> Descargar 
                       </button>
@@ -67,7 +64,7 @@
                             <td>{{ $productos[$i]->Cantidad }}</td> 
                         
                             <td class="opciones text-center" style="">
-                                <a href="/producto/ver">
+                                <a href="/producto/ver/{{ $productos[$i]->id }}">
                                 <button type="button" class="btn btn-primary"><i class="fas fa-eye"></i></button>
                             </a>           
 
