@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('detallecompras', function (Blueprint $table) {
             $table->id();
             $table->integer('idcompra');
+            $table->integer('idproducto')->nullable();
             $table->string('descripcion')->nullable();
             $table->integer('cantidad')->nullable();
             $table->double('preciouni')->nullable();

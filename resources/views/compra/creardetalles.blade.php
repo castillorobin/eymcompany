@@ -67,12 +67,6 @@
                     </div>
                     </div>
 
-                    <div class="col-3">
-                    <div class="input-group">
-                        <span class="input-group-text">Total</span>
-                        <input type="text" class="form-control" id="total" name="total" value="{{ $ultimoid->Total}}" readonly>
-                    </div>
-                    </div>
     
         </div>
 
@@ -88,6 +82,13 @@
 
                      
         </div>
+        @foreach($productos as $producto)
+        
+        <input type="text" hidden id="det{{ $producto->id }}" value="{{ $producto->Descripcion }}"> 
+        <input type="text" hidden id="can{{ $producto->id }}" value="{{ $producto->Cantidad }}"> 
+        <input type="text" hidden id="pre{{ $producto->id }}" value="{{ $producto->Precio }}"> 
+        
+        @endforeach
 
 
       
@@ -95,9 +96,19 @@
         <div class="row">
             
                    
-                    <div class=" col-3 " >
+                    <div class=" col-6 " >
                     
                     
+                        <label class="form-label">Productos</label>
+                        <select class="form-control js-example-basic-single produ" name="producto" id="producto" onChange="getComboA(this)">
+                            @foreach($productos as $producto)
+                            <option value="{{$producto->id}}">{{$producto->Nombre}}</option>
+                            
+                            
+                            @endforeach
+                            
+                        </select>
+                   
                     
                     </div>   
                 
@@ -177,7 +188,7 @@
 <a href="/compra">
                     <button type="button" class="btn btn-danger">Cancelar</button> </a>
 &nbsp; &nbsp; &nbsp;
-<a href="/compra">
+<a href="/compra/guardartodo">
                     <button type="button" class="btn btn-primary">Guardar</button> </a>
 
                 </form>
@@ -208,19 +219,20 @@
     function getComboA(selectObject) {
 var id = selectObject.value;  
 //var cant = document.getElementById('can1').text; 
-var canti = document.getElementById('can' + id).value ;
+//var canti = document.getElementById('can' + id).value ;
 
-document.getElementById("existencia").value = canti;
+//document.getElementById("existencia").value = canti;
 
 var deta = document.getElementById('det' + id).value ;
 
 document.getElementById("detalle").value = deta;
+document.getElementById("cantidad").focus();
 
-var preci = document.getElementById('pre' + id).value ;
+//var preci = document.getElementById('pre' + id).value ;
 
-document.getElementById("precio").value = preci;
+//document.getElementById("precio").value = preci;
 
-document.getElementById("total").value = preci * canti ;
+//document.getElementById("total").value = preci * canti ;
 
 
 }

@@ -179,7 +179,7 @@
                             <option value="{{$producto->id}}">{{$producto->Nombre}}</option>
                             
                             
-                            @endforeach
+                            @endforeach 
                             
                         </select>
                     </div>

@@ -83,3 +83,4 @@ Route::get('/compra/guardardet', [App\Http\Controllers\ComprasController::class,
 Route::get('/compra/borrar/{id}', [App\Http\Controllers\ComprasController::class, 'destroy'])->name('borrarcomp');
 Route::get('/compra/editar/{id}', [App\Http\Controllers\ComprasController::class, 'edit'])->name('editarcomp');
 Route::get('/compra/update/{id}', [App\Http\Controllers\ComprasController::class, 'update'])->name('updatecomp');
+Route::get('/compra/guardartodo', [App\Http\Controllers\ComprasController::class, 'guardartodo'])->name('guardartodo');
