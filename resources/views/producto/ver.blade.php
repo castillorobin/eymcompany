@@ -107,7 +107,7 @@
         
         @for ($i=0; $i< count($detalles); $i++)
         <tr >
-        <td>{{ $detalles[$i]->id}}</td>        
+        <td>{{ $i}}</td>        
         <td>{{ $detalles[$i]->tipo }}</td>
         <td>{{ $detalles[$i]->created_at }}</td>
         <td>{{ $detalles[$i]->nota }}</td>

@@ -182,6 +182,11 @@
                 <input type="text" class="form-control" id="cargandodes"  name="cargandodes">
                 <input type="text" class="form-control" id="iddesca" name="iddesca" hidden>
               </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Nota</label>
+                <input type="text" class="form-control" id="notades"  name="notades">
+                
+              </div>
         </div>
         <div class="modal-footer">
             <button type="submit" class="btn btn-primary">Guardar</button>
