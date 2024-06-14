@@ -42,12 +42,21 @@ class ProductoController extends Controller
 
         $cargando = $request->get('cargandodes'); 
         $cantidad = $request->get('cantidaddes'); 
+        $nota = $request->get('notades');
 
         $producto = Producto::find($id);
 
         $producto->Cantidad =  $cantidad - $cargando; 
         $producto->save();
 
+        $carde = new Cardex();
+        $carde->idproducto = $id;
+        $carde->nota = $nota;
+        $carde->tipo = "descarga";
+        $carde->Cantidad = $cargando;
+        $carde->save();
+
+        
         
         $productos = Producto::all();
         return view('producto.index', compact('productos'));
@@ -126,7 +135,7 @@ class ProductoController extends Controller
     {
        // $proveedores = Proveedor::all();
        $ultimoid = Producto::find($id);
-       $detalles = Cardex::where('idproducto', $id)->get();
+       $detalles = Cardex::where('idproducto', $id)->orderBy('created_at', 'desc')->get();
         return view('producto.ver', compact('ultimoid', 'detalles'));
     }
 
