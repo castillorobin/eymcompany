@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Producto;
 use App\Models\Proveedor;
 use App\Models\Cardex;
+use App\Models\Ficha;
 
 class ProductoController extends Controller
 {
@@ -50,6 +51,66 @@ class ProductoController extends Controller
         
         $productos = Producto::all();
         return view('producto.index', compact('productos'));
+    }
+
+    public function descargo()
+    {   
+        $productos = Producto::all();
+        return view('producto.descargo', compact('productos'));
+    }
+    public function descargoborrar($id)
+    {   
+        Ficha::find($id)->delete();
+        $productos = Producto::all();
+        $detalles = Ficha::all();
+        return view('producto.descargodetalles', compact('productos', 'detalles'));
+    }
+
+    public function descargodetalle(Request $request)
+    {   
+        
+        $id= $request->get('producto');
+        $producto = Producto::find($id);
+        
+
+            $carde = new Ficha();
+            $carde->idproducto = $id;
+            $carde->producto = $producto->Nombre;
+            $carde->nota = $request->get('nota');
+            $carde->tipo = "Descarga";
+            $carde->Cantidad = $request->get('cantidad');
+            $carde->save();
+
+            $detalles = Ficha::all();
+
+        $productos = Producto::all();
+        return view('producto.descargodetalles', compact('productos', 'detalles'));
+    }
+
+    public function descargoguardar()
+    {   
+        $detalles = Ficha::all();
+        foreach($detalles as $detalle)
+        {
+            $carde = new Cardex();
+            $carde->idproducto = $detalle->idproducto;
+            $carde->nota = $detalle->nota;
+            $carde->tipo = "Descarga";
+            $carde->Cantidad = $detalle->cantidad;
+            $carde->save();
+
+            $producto = Producto::find($detalle->idproducto);
+
+        $producto->Cantidad =  $producto->Cantidad - $detalle->cantidad; 
+        $producto->save();
+
+        }
+
+        Ficha::truncate();
+
+        $productos = Producto::all();
+
+        return view('producto.descargo', compact('productos'));
     }
 
     /**

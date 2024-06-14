@@ -345,6 +345,13 @@ return [
             
             'label_color' => 'success',
         ],
+        [
+            'text' => 'Ficha de Descarga',
+            'url' => 'producto/descargo',
+            'icon' => 'fas fa-boxes',
+            
+            'label_color' => 'success',
+        ],
 
         [
             'text' => 'Compras',

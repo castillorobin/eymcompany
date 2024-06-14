@@ -58,6 +58,11 @@ Route::get('/producto/editar/{id}', [App\Http\Controllers\ProductoController::cl
 Route::get('/producto/update/{id}', [App\Http\Controllers\ProductoController::class, 'update'])->name('updatepr');
 Route::get('/producto/cargar', [App\Http\Controllers\ProductoController::class, 'cargar'])->name('cargarp');
 Route::get('/producto/descarga', [App\Http\Controllers\ProductoController::class, 'descarga'])->name('descargap');
+Route::get('/producto/descargo', [App\Http\Controllers\ProductoController::class, 'descargo'])->name('descargop');
+Route::get('/producto/descargodetalle', [App\Http\Controllers\ProductoController::class, 'descargodetalle'])->name('descargodetalle');
+Route::get('/producto/descargoborrar/{id}', [App\Http\Controllers\ProductoController::class, 'descargoborrar'])->name('descargopborrar');
+Route::get('/producto/descargoguardar', [App\Http\Controllers\ProductoController::class, 'descargoguardar'])->name('descargoguardar');
+
 
 
 // Cotizaciones

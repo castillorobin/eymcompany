@@ -107,8 +107,15 @@
         
         @for ($i=0; $i< count($detalles); $i++)
         <tr >
-        <td>{{ $detalles[$i]->id}}</td>        
-        <td>{{ $detalles[$i]->tipo }}</td>
+            
+        <td>{{ $detalles[$i]->id}}</td>
+
+        @if ( $detalles[$i]->tipo == "Descarga" )
+        <td class="text-center"><button type="button" class="btn btn-danger">Descarga</button></td>
+        @else
+        <td class="text-center"><button type="button" class="btn btn-success">Carga</button></td>
+        @endif        
+         
         <td>{{ $detalles[$i]->created_at }}</td>
         <td>{{ $detalles[$i]->nota }}</td>
         <td>{{ $detalles[$i]->cantidad }}</td>
