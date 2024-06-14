@@ -64,6 +64,7 @@ class ProductoController extends Controller
 
     public function descargo()
     {   
+        Ficha::truncate();
         $productos = Producto::all();
         return view('producto.descargo', compact('productos'));
     }

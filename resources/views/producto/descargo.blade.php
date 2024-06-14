@@ -115,10 +115,10 @@
 
                     
 <hr>
-<a href="/cotizacion">
+<a href="/producto/descargo">
                     <button type="button" class="btn btn-danger">Cancelar</button> </a>
 &nbsp; &nbsp; &nbsp;
-                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button type="button" class="btn btn-primary">Guardar</button>
 
                 
                 </div>
